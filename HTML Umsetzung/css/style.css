@@ -6,20 +6,29 @@ body{
     overflow-x:hidden;
     margin: 0;
     padding: 0;
+    height:200vh;
 }
 h1 {
     margin:0;
     padding:20px;
-    font-family: 'Pacifico', cursive;
     text-align:center;
-    font-size:80px;
+    font-size:40px;
 
 }
 p{
     font-family: 'Rubik', sans-serif;
 }
 input{
-    margin:10px;
+    float:left;
+    margin:10%;
+    margin-bottom:2%;
+    width:80%;
+
+}
+
+label{
+    font-size:20px;
+
 }
 
 #content {
@@ -30,23 +39,20 @@ input{
     background-color:white;
 }
 
-.betroffener {
-    font-size:3vh;
-    width:50%;
-    height:20vh;
+.parameter{
+    width:30%;
+    padding:1.5%;
     float:left;
+    margin:0 auto;
     text-align:center;
-    line-height:20vh;
 }
-#patient {
-    background:green;
 
+#canvas1 {
+    z-index:-10;
+    margin:0 auto;
 }
-#pflegedienst {
-    background:red;
-    
-}
-#angehoeriger {
-    background:grey;
 
+.parameterwert{
+    font-size:20px;
 }
+
