@@ -45,6 +45,18 @@ function draw() {
     strokeCap(SQUARE);
     angleMode(DEGREES);
     textAlign(CENTER);
+    if((parseInt(angehoeriger.sleep) + parseInt(angehoeriger.work) + parseInt(angehoeriger.care)) > 24){
+        document.getElementById('schlafzeit_input').value = 24-(parseInt(angehoeriger.care) + parseInt(angehoeriger.work));
+        angehoeriger.sleep = 24-(parseInt(angehoeriger.care) + parseInt(angehoeriger.work));
+    }
+    if((parseInt(angehoeriger.work) + parseInt(angehoeriger.sleep) + parseInt(angehoeriger.care)) > 24){
+        document.getElementById('arbeitszeit_input').value = 24-(parseInt(angehoeriger.care) + parseInt(angehoeriger.sleep));
+        angehoeriger.work = 24-(parseInt(angehoeriger.care) + parseInt(angehoeriger.sleep));
+    }
+    if((parseInt(angehoeriger.care) + parseInt(angehoeriger.sleep) + parseInt(angehoeriger.work)) > 24){
+        document.getElementById('pflegezeit_input').value = 24-(parseInt(angehoeriger.sleep) + parseInt(angehoeriger.work));
+        angehoeriger.care = 24-(parseInt(angehoeriger.sleep) + parseInt(angehoeriger.work));
+    }
     angehoeriger.display();
     angehoeriger.update();
 }
@@ -52,14 +64,7 @@ function draw() {
 function onLoadedHandler() {
 
     document.getElementById('schlafzeit_input').addEventListener('input', function (evt) {
-        if(this.work+this.care+this.sleep > 24){
-            document.getElementById("schlafzeit_input").disabled = true;
-            angehoeriger.sleep -= 1;
-        }
-        else{
-            document.getElementById("schlafzeit_input").disabled = false;
 
-        }
         var diff = abs(angehoeriger.sleep - this.value);
         angehoeriger.sleep = this.value;
         document.getElementById('arbeitszeit_wert').innerHTML = round(angehoeriger.work) + " h";
