@@ -18,21 +18,21 @@ class Circle {
         strokeWeight(1);
         ellipse(this.x, this.y, 100 * this.size, 100 * this.size);
         strokeWeight(10);
-        stroke(100, 50, 200);
+        stroke(46, 40, 136);
         arc(this.x, this.y, 100 * this.size, 100 * this.size, 0, (this.sleep / 24) * 360);
         stroke(200, 50, 100);
         arc(this.x, this.y, 100 * this.size, 100 * this.size, (this.sleep / 24) * 360, (this.sleep / 24) * 360 + (this.work / 24) * 360);
         stroke(200, 200, 100);
         arc(this.x, this.y, 100 * this.size, 100 * this.size, (this.sleep / 24) * 360 + (this.work / 24) * 360, (this.sleep / 24) * 360 + (this.work / 24) * 360 + (this.care / 24) * 360);
         if(this.freetime > 0){
-        stroke(50, 200, 50);
+        stroke(53, 148, 61);
         arc(this.x, this.y, 100 * this.size, 100 * this.size, (this.sleep / 24) * 360 + (this.work / 24) * 360 + (this.care / 24) * 360, 360);
         }
         noStroke();
-        fill(50,200,50);
+        fill(53, 148, 61);
         textSize(30*this.size);
-        text(this.freetime,this.x,this.y+10*this.size);
-        text(parseInt(this.work)+parseInt(this.care)+parseInt(this.sleep),100,100);
+        text(this.freetime+" h",this.x,this.y+10*this.size);
+    
         noFill();
     }
 }
@@ -48,14 +48,7 @@ function draw() {
     if((parseInt(angehoeriger.sleep) + parseInt(angehoeriger.work) + parseInt(angehoeriger.care)) > 24){
         document.getElementById('schlafzeit_input').value = 24-(parseInt(angehoeriger.care) + parseInt(angehoeriger.work));
         angehoeriger.sleep = 24-(parseInt(angehoeriger.care) + parseInt(angehoeriger.work));
-    }
-    if((parseInt(angehoeriger.work) + parseInt(angehoeriger.sleep) + parseInt(angehoeriger.care)) > 24){
-        document.getElementById('arbeitszeit_input').value = 24-(parseInt(angehoeriger.care) + parseInt(angehoeriger.sleep));
-        angehoeriger.work = 24-(parseInt(angehoeriger.care) + parseInt(angehoeriger.sleep));
-    }
-    if((parseInt(angehoeriger.care) + parseInt(angehoeriger.sleep) + parseInt(angehoeriger.work)) > 24){
-        document.getElementById('pflegezeit_input').value = 24-(parseInt(angehoeriger.sleep) + parseInt(angehoeriger.work));
-        angehoeriger.care = 24-(parseInt(angehoeriger.sleep) + parseInt(angehoeriger.work));
+        document.getElementById('schlafzeit_wert').innerHTML = round(angehoeriger.sleep) + " h";
     }
     angehoeriger.display();
     angehoeriger.update();
@@ -64,7 +57,6 @@ function draw() {
 function onLoadedHandler() {
 
     document.getElementById('schlafzeit_input').addEventListener('input', function (evt) {
-
         var diff = abs(angehoeriger.sleep - this.value);
         angehoeriger.sleep = this.value;
         document.getElementById('arbeitszeit_wert').innerHTML = round(angehoeriger.work) + " h";
