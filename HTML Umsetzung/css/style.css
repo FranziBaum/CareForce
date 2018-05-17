@@ -1,0 +1,58 @@
+*{
+font-family: 'Rubik', sans-serif;
+font-size:25px;
+}
+body{
+    overflow-x:hidden;
+    margin: 0;
+    padding: 0;
+    height:200vh;
+}
+h1 {
+    margin:0;
+    padding:20px;
+    text-align:center;
+    font-size:40px;
+
+}
+p{
+    font-family: 'Rubik', sans-serif;
+}
+input{
+    float:left;
+    margin:10%;
+    margin-bottom:2%;
+    width:80%;
+
+}
+
+label{
+    font-size:20px;
+
+}
+
+#content {
+    padding:40px;
+    margin:0 auto;
+    width:60vw;
+    height:100vh;
+    background-color:white;
+}
+
+.parameter{
+    width:30%;
+    padding:1.5%;
+    float:left;
+    margin:0 auto;
+    text-align:center;
+}
+
+#canvas1 {
+    z-index:-10;
+    margin:0 auto;
+}
+
+.parameterwert{
+    font-size:20px;
+}
+
