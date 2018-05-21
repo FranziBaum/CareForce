@@ -17,6 +17,7 @@ h1 {
 }
 p{
     font-family: 'Rubik', sans-serif;
+    font-size:inherit;
 }
 input{
     float:left;
@@ -31,7 +32,7 @@ label{
 
 }
 
-#content {
+#content { /*zentriert den Inhalt*/
     padding:40px;
     margin:0 auto;
     width:60vw;
@@ -45,14 +46,11 @@ label{
     float:left;
     margin:0 auto;
     text-align:center;
+    font-size:20px;
 }
 
 #canvas1 {
-    z-index:-10;
     margin:0 auto;
 }
 
-.parameterwert{
-    font-size:20px;
-}
 

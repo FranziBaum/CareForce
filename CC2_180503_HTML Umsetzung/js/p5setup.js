@@ -4,12 +4,13 @@ width = windowWidth;
 height = windowHeight;
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+    var cnv = createCanvas(windowWidth, windowHeight);
+    cnv.parent('canvas1');
     frameRate(30);
 }
 
 function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
+    resizeCanvas(windowWidth, 300);
     clear();
 }
   
