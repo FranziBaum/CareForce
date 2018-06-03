@@ -1,8 +1,8 @@
 /* jslint esversion: 6 */
 export default class Circle {
     constructor(s) {
-        this.x = width*0.3;
-        this.y = height / 2;
+        this.x = width*0.15;
+        this.y = height / 4;
         this.size = s;
         this.sleep = 1;
         this.work = 1;
@@ -34,7 +34,7 @@ export default class Circle {
     }
 
     reposition(){
-        this.x = width*0.3;
-        this.y = height / 2;
+        this.x = width*0.15;
+        this.y = height / 4;
     }
 }

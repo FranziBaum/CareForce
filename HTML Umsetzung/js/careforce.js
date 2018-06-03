@@ -8,7 +8,7 @@ let context = new p5(); //Erstellen einer neuen p5 Instanz
 
 function onLoadedHandler() {
 
-    let angehoeriger = new Circle(2);
+    let angehoeriger = new Circle(1);
     let canvas = context.createCanvas(windowWidth, 300);
     canvas.parent('canvas1');
     context.frameRate(60);
