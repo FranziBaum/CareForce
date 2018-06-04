@@ -3,16 +3,19 @@
   <head>
     <title>Hello, WebVR! - A-Frame</title>
     <meta name="description" content="Hello, WebVR! - A-Frame">
-    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-    <script src="js/aframe.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
   </head>
   <body>
-<a-scene>
-  <a-assets>
-    <a-asset-item id="books" src="assets/buch.dae"></a-asset-item>
-    <img id="booktexture" src="assets/book1.png">
-  </a-assets>
-  <a-entity collada-model="#books" material="#booktexture" position="0 0 -7" rotation="0 0 0"></a-entity>
-</a-scene>
+    <a-scene>
+        <a-assets>
+            <a-asset-item id="obj" src="assets/buch.obj"></a-asset-item>
+            <a-asset-item id="mtl" src="assets/buch.mtl"></a-asset-item>
+            <a-asset-item id="houseobj" src="assets/house.obj"></a-asset-item>
+            <a-asset-item id="housemtl" src="assets/house.mtl"></a-asset-item>
+          </a-assets>
+        <a-obj-model src="#obj" mtl="#mtl" position="0 0 -7" rotation="0 330 0"></a-obj-model>
+        <a-obj-model src="#houseobj" mtl="#housemtl" position="-7 -1 7" rotation="0 0 0"></a-obj-model>
+    </a-scene>
   </body>
 </html>
