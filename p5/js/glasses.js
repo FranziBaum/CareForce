@@ -5,19 +5,23 @@ export default class Glasses{
         this.x = random(0,windowWidth);
         this.y = random(0,windowHeight);
         this.c = 0;
-        this.timerstart = round(millis()); //millis() gibt die Zeit in Sekunden/1000 seitdem das Programm läuft
+        this.timerstart = millis(); //millis() gibt die Zeit in Sekunden/1000 seitdem das Programm läuft
         this.timerduration = 5000;
+        this.timer = this.timerduration;
 
     }
     display(){
         fill(this.c);
         rect(this.x,this.y,100,100);
         textSize(30);
-        text(round(millis()/1000),100,100);
+        this.timer = this.timerduration-this.timerstart-millis();
+        if(this.timer > 0){
+        text(round((this.timer/1000)),100,100);
+        }
     }
 
     hitTest(){
-        if(mouseX>this.x-50 && mouseX < this.x+50 && mouseY > this.y-50 && mouseY < this.y+50 && mouseIsPressed){
+        if(mouseX>this.x-50 && mouseX < this.x+50 && mouseY > this.y-50 && mouseY < this.y+50 && mouseIsPressed && this.timer > 0){
             return true;
         }
         else{
