@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, WebVR! - A-Frame</title>
+    <meta name="description" content="Hello, WebVR! - A-Frame">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
+
+    <script src="js/heart.js" type="module"></script>
+    <script src="js/patient.js" type="module"></script>
+    <script src="js/simulation.js" type="module"></script>
+
+
+  </head>
+  <body>
+<a-scene>
+        <a-assets>
+            <a-asset-item id="obj" src="assets/buch.obj"></a-asset-item>
+            <a-asset-item id="mtl" src="assets/buch.mtl"></a-asset-item>
+            <!-- <a-asset-item id="houseobj" src="assets/house.obj"></a-asset-item>
+            <a-asset-item id="housemtl" src="assets/house.mtl"></a-asset-item> !-->
+          </a-assets>
+        <a-obj-model id="book" src="#obj" mtl="#mtl" position="0 0 -7" rotation="0 130 90"></a-obj-model>
+        <a-obj-model src="#houseobj" mtl="#housemtl" position="-7 -1 7" rotation="0 0 0"></a-obj-model>!-->
+    </a-scene>
+  </body>
+</html>
