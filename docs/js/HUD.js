@@ -3,7 +3,7 @@ export default class Book{
     constructor(){
         this.x;
         this.y;
-        this.model;
+        this.image;
         this.animation; 
         this.material; 
 
@@ -23,37 +23,11 @@ export default class Book{
 
 
     
+    
     startanimation () {
 
 
     }
 
-
    
-    found () {
-
-
-    }
-
-   
-   
-    expire () {
-
-
-   }
-
-   
-   
-   affectmood() {
-
-
-   }
-   
-   
-   
-   mouseover () {
-
-
-    }
-
 }

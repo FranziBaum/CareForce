@@ -1,13 +1,40 @@
 /* jslint esversion: 6 */
-export default class Heart{
+export default class Book{
     constructor(){
-        this.r = 255;
-        this.b = 0;
+        this.x;
+        this.y;
+        this.model;
+        this.animation; 
+        this.material;
+        this.color; 
 
     }
-    display(){
-        fill(this.r, 0, this.b);
-        ellipse(300,300,100);
+
+    move () {
+
+    }
+
+
+   
+    delete () {
+
+
+    }
+
+
+    
+    
+    changecolor () {
+
+
+    }
+
+   
+   
+   
+    startanimation () {
+
+
     }
 
 }

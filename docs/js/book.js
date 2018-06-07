@@ -9,7 +9,7 @@ export default class Book{
 
     }
 
-
+    
     move () {
 
     }
@@ -23,35 +23,16 @@ export default class Book{
 
 
     
+    
     startanimation () {
 
 
     }
 
-
-   
-    found () {
-
-
-    }
-
-   
-   
-    expire () {
-
-
-   }
-
-   
-   
-   affectmood() {
-
-
-   }
    
    
    
-   mouseover () {
+    mouseover () {
 
 
     }

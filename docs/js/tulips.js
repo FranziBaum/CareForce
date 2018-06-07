@@ -23,37 +23,13 @@ export default class Book{
 
 
     
+    
     startanimation () {
 
 
     }
 
-
    
-    found () {
-
+   
 
     }
-
-   
-   
-    expire () {
-
-
-   }
-
-   
-   
-   affectmood() {
-
-
-   }
-   
-   
-   
-   mouseover () {
-
-
-    }
-
-}

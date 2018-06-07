@@ -6,6 +6,7 @@ export default class Book{
         this.model;
         this.animation; 
         this.material; 
+        this.sound;
 
     }
 
@@ -23,37 +24,18 @@ export default class Book{
 
 
     
+    
     startanimation () {
 
 
     }
 
-
-   
-    found () {
-
-
-    }
-
-   
-   
-    expire () {
-
-
-   }
-
-   
-   
-   affectmood() {
-
-
-   }
    
    
    
-   mouseover () {
+    startsound () {
 
 
-    }
+    } 
 
 }
