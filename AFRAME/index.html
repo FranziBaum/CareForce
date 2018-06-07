@@ -10,19 +10,35 @@
     <script src="js/heart.js" type="module"></script>
     <script src="js/patient.js" type="module"></script>
     <script src="js/simulation.js" type="module"></script>
+    <script src="js/createText.js"></script>
 
 
   </head>
   <body>
-<a-scene>
+<a-scene shadow id="scene">
         <a-assets>
-            <a-asset-item id="obj" src="assets/buch.obj"></a-asset-item>
-            <a-asset-item id="mtl" src="assets/buch.mtl"></a-asset-item>
-            <!-- <a-asset-item id="houseobj" src="assets/house.obj"></a-asset-item>
-            <a-asset-item id="housemtl" src="assets/house.mtl"></a-asset-item> !-->
+            <a-asset-item id="obj" src="assets/room.obj"></a-asset-item>
+            <a-asset-item id="mtl" src="assets/room.mtl"></a-asset-item>
+            <img id="blackview" src="assets/blackview.png">
+  
           </a-assets>
-        <a-obj-model id="book" src="#obj" mtl="#mtl" position="0 0 -7" rotation="0 130 90"></a-obj-model>
-        <a-obj-model src="#houseobj" mtl="#housemtl" position="-7 -1 7" rotation="0 0 0"></a-obj-model>!-->
+
+          <a-camera position="0 1.5 0" id="kamera1">
+              <a-cursor></a-cursor>
+              <a-plane src="#blackview" height= "0.6" width="1" position="0 0 0" opacity="0.9">
+                  <a-animation attribute="position" from="0 0 0" to="0 0 -0.2" dur="10000" direction="alternate" repeat="indefinite"></a-animation>
+              </a-plane>
+
+  
+          </a-camera>
+          <a-box position="0 5 0" width="0.2" height="0.2" color="pink">
+          <a-entity light="type: point; castShadows: true; intensity:0.6; decay: 8;" position="0 0 0"></a-entity>
+          </a-box>
+
+          <a-entity light="type: ambient; castShadows: true; intensity:0.1; decay: 2;" position="-2 0 0"></a-entity>
+  
+          <a-sky color="lightblue"></a-sky>
+        <a-obj-model id="#obj" src="#obj" mtl="#mtl" position="0 0 0" rotation="0 0 0" shadow="receive: true; cast: true;"></a-obj-model>
     </a-scene>
   </body>
 </html>
