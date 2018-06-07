@@ -11,10 +11,9 @@
     <script src="js/patient.js" type="module"></script>
     <script src="js/simulation.js" type="module"></script>
     <script src="js/createText.js"></script>
-
   </head>
   <body>
-<a-scene shadow id="scene">
+<a-scene shadow="basic" id="scene">
         <a-assets>
             <a-asset-item id="room_obj" src="assets/room.obj"></a-asset-item>
             <a-asset-item id="room_mtl" src="assets/room.mtl"></a-asset-item>
@@ -32,10 +31,10 @@
   
           </a-camera>
           <a-box position="0 5 0" width="0.2" height="0.2" color="pink">
-          <a-entity light="type: point; castShadows: true; intensity:0.6; decay: 8;" position="0 0 0"></a-entity>
+          <a-entity light="type: point; castShadow: true; intensity:0.6; decay: 8;" position="0 0 0"></a-entity>
           </a-box>
 
-          <a-entity light="type: ambient; castShadows: true; intensity:0.1; decay: 2;" position="-2 0 0"></a-entity>
+          <a-entity light="type: ambient; intensity:0.4; decay: 2;" position="-2 0 0"></a-entity>
   
           <a-sky color="lightblue"></a-sky>
         <a-obj-model id="#room" src="#room_obj" mtl="#room_mtl" position="0 0 0" rotation="0 0 0" shadow="receive: true; cast: true;"></a-obj-model>
