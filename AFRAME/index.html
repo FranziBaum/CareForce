@@ -12,13 +12,13 @@
     <script src="js/simulation.js" type="module"></script>
     <script src="js/createText.js"></script>
 
-
   </head>
   <body>
 <a-scene shadow id="scene">
         <a-assets>
-            <a-asset-item id="obj" src="assets/room.obj"></a-asset-item>
-            <a-asset-item id="mtl" src="assets/room.mtl"></a-asset-item>
+            <a-asset-item id="room_obj" src="assets/room.obj"></a-asset-item>
+            <a-asset-item id="room_mtl" src="assets/room.mtl"></a-asset-item>
+            <a-asset-item id="tulip_obj" src="assets/tulip.obj"></a-asset-item>
             <img id="blackview" src="assets/blackview.png">
   
           </a-assets>
@@ -38,7 +38,7 @@
           <a-entity light="type: ambient; castShadows: true; intensity:0.1; decay: 2;" position="-2 0 0"></a-entity>
   
           <a-sky color="lightblue"></a-sky>
-        <a-obj-model id="#obj" src="#obj" mtl="#mtl" position="0 0 0" rotation="0 0 0" shadow="receive: true; cast: true;"></a-obj-model>
+        <a-obj-model id="#room" src="#room_obj" mtl="#room_mtl" position="0 0 0" rotation="0 0 0" shadow="receive: true; cast: true;"></a-obj-model>
     </a-scene>
   </body>
 </html>
