@@ -1,0 +1,2 @@
+/* jslint esversion: 6 */
+
