@@ -1,5 +1,5 @@
 /* jslint esversion: 6 */
-export default class Book{
+export default class Glasses{
     constructor(){
         this.x;
         this.y;
