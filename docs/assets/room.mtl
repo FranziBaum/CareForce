@@ -119,23 +119,17 @@ Kd 0.349020 0.203922 0.152941
 Ks 0.330000 0.330000 0.330000
 map_Kd room/M_81272_detail_a_copy_side.jpg
 
-newmtl _22
+newmtl Wood_Veneer_01
 Ka 0.000000 0.000000 0.000000
-Kd 0.533333 0.345098 0.321569
+Kd 0.470588 0.274510 0.145098
 Ks 0.330000 0.330000 0.330000
-map_Kd room/_22.jpg
+map_Kd room/Wood_Veneer_01.jpg
 
 newmtl Formica_Laminate_Light
 Ka 0.000000 0.000000 0.000000
 Kd 0.835294 0.741176 0.643137
 Ks 0.330000 0.330000 0.330000
 map_Kd room/Formica_Laminate_Light.jpg
-
-newmtl Wood_Veneer_01
-Ka 0.000000 0.000000 0.000000
-Kd 0.470588 0.274510 0.145098
-Ks 0.330000 0.330000 0.330000
-map_Kd room/Wood_Veneer_01.jpg
 
 newmtl Carrera_Marble
 Ka 0.000000 0.000000 0.000000
