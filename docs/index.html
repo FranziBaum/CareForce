@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, WebVR! - A-Frame</title>
+    <meta name="description" content="Hello, WebVR! - A-Frame">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
+
+    <script src="js/heart.js" type="module"></script>
+    <script src="js/patient.js" type="module"></script>
+    <script src="js/simulation.js" type="module"></script>
+    <script src="js/createText.js"></script>
+  </head>
+  <body>
+<a-scene shadow="pcfsoft" id="scene">
+        <a-assets>
+            <a-asset-item id="room_obj" src="assets/room.obj"></a-asset-item>
+            <a-asset-item id="room_mtl" src="assets/room.mtl"></a-asset-item>
+            <a-asset-item id="tulip_obj" src="assets/tulip.obj"></a-asset-item>
+            <img id="blackview" src="assets/blackview.png">
+  
+          </a-assets>
+
+          <a-camera position="0 1.5 0" id="kamera1">
+              <a-cursor></a-cursor>
+              <a-plane src="#blackview" height= "0.6" width="1" position="0 0 0" opacity="0.9">
+                  <a-animation attribute="position" from="0 0 0" to="0 0 -0.2" dur="10000" direction="alternate" repeat="indefinite"></a-animation>
+              </a-plane>
+
+  
+          </a-camera>
+          <a-box position="0 5 0" width="0.2" height="0.2" color="pink">
+          <a-entity light="type: point; castShadow: true; intensity:0.3; decay: 8;" position="0 0 0"></a-entity>
+          </a-box>
+
+          <a-entity light="type: ambient; intensity:1; decay: 2;" position="0 1 0"></a-entity>
+  
+          <a-sky color="lightblue"></a-sky>
+        <a-obj-model id="#room" src="#room_obj" mtl="#room_mtl" position="0 0 0" rotation="0 0 0" shadow="receive: true; cast: true;"></a-obj-model>
+    </a-scene>
+  </body>
+</html>
