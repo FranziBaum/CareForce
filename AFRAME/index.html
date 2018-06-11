@@ -1,44 +1,66 @@
 <!DOCTYPE html>
+<!-- A-Frame wird, wie auch p5, in einer HTML Seite eingebunden -->
 <html>
-  <head>
-    <title>Hello, WebVR! - A-Frame</title>
-    <meta name="description" content="Hello, WebVR! - A-Frame">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
 
-    <script src="js/heart.js" type="module"></script>
-    <script src="js/patient.js" type="module"></script>
-    <script src="js/simulation.js" type="module"></script>
-    <script src="js/createText.js"></script>
+<head>
+  <!-- im Head werden Angaben zum Titel und zu Metadaten gemacht-->
+  <title>May the CareForce be with you!</title>
+  <meta charset="utf-8">
 
-  </head>
-  <body>
-<a-scene shadow id="scene">
-        <a-assets>
-            <a-asset-item id="room_obj" src="assets/room.obj"></a-asset-item>
-            <a-asset-item id="room_mtl" src="assets/room.mtl"></a-asset-item>
-            <a-asset-item id="tulip_obj" src="assets/tulip.obj"></a-asset-item>
-            <img id="blackview" src="assets/blackview.png">
-  
-          </a-assets>
+  <!-- nachfolgend werden die stylesheets und Skripte eingebunden -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+  <!-- A-Frame Framework -->
+  <script src="https://rawgit.com/takahirox/aframe-rain/master/build/aframe-rain.min.js"></script>
+  <!-- Ein Skript, welches das Hinzufügen von Regen ermöglicht. -->
 
-          <a-camera position="0 1.5 0" id="kamera1">
-              <a-cursor></a-cursor>
-              <a-plane src="#blackview" height= "0.6" width="1" position="0 0 0" opacity="0.9">
-                  <a-animation attribute="position" from="0 0 0" to="0 0 -0.2" dur="10000" direction="alternate" repeat="indefinite"></a-animation>
-              </a-plane>
+  <script src="js/heart.js" type="module"></script>
+  <script src="js/patient.js" type="module"></script>
+  <script src="js/simulation.js" type="module"></script>
+  <script src="js/component.js"></script>
+  <script src="js/glasses.js"></script>
 
-  
-          </a-camera>
-          <a-box position="0 5 0" width="0.2" height="0.2" color="pink">
-          <a-entity light="type: point; castShadows: true; intensity:0.6; decay: 8;" position="0 0 0"></a-entity>
-          </a-box>
+</head>
 
-          <a-entity light="type: ambient; castShadows: true; intensity:0.1; decay: 2;" position="-2 0 0"></a-entity>
-  
-          <a-sky color="lightblue"></a-sky>
-        <a-obj-model id="#room" src="#room_obj" mtl="#room_mtl" position="0 0 0" rotation="0 0 0" shadow="receive: true; cast: true;"></a-obj-model>
-    </a-scene>
-  </body>
+<body>
+  <!-- Da es sich um ein HTML Dokument handelt gibt es einen body-tag für den Inhalt -->
+  <a-scene shadow>
+    <!-- Den Rahmen der VR Anwendung bildet der Tag <a-scene>. Hier wird also die "Szene" angelegt.-->
+    <a-box position="0 1.2 0" height="0.2">
+      <!-- Hier wird eine Box erstellt. Sie verkörpert die nachfolgend erstellten Lichter.-->
+      <a-entity light="type: point;
+                        castShadow: true; 
+                        intensity:1; 
+                        decay: 2;" position="0 0 0"></a-entity>
+      <a-entity light=" type: ambient; 
+                        intensity:0.2; 
+                        decay: 2;" position="0 0 0"></a-entity>
+      <!-- Es gibt verschiedene Arten von Lichtern (type). Diese können Schatten werfen (castShadow). Die Intensität kann auch verändert werden (intensity). Die Stärke des Abklingens kann auch verändert werden (decay).-->
+    </a-box>
+    <a-assets>
+      <!-- Hier werden die Assets (Objekte, Bilder, Sounds, etc.) geladen mit denen wir arbeiten möchten.-->
+      <a-asset-item id="room_dae" src="assets/room.dae"></a-asset-item>
+      <a-asset-item id="schrank_dae" src="assets/schrank.dae"></a-asset-item>
+      <a-asset-item id="brille_dae" src="assets/brille.dae"></a-asset-item>
+    </a-assets>
+
+    <a-camera position="0 0.15 0" id="kamera1">
+      <!-- Hier wird die Position der Kamera/Sicht des Nutzers definiert.-->
+      <a-cursor></a-cursor>
+      <!-- Hier wird ein Cursor innerhalb der Kamera erstellt. Dies hat zu Folge, dass dem Nutzer ein Cursor zu Verfügung steht, der die Mitte seines Sichtfeldes markiert.-->
+    </a-camera>
+
+    <a-sky color="lightblue"></a-sky>
+    <!-- Hier wird die Farbe des "Himmels" definiert-->
+
+    <a-collada-model id="raum" src="#room_dae" position="0 0 0" rotation="0 0 0" shadow="cast: true; receive: true;"></a-object-model>
+      <!-- Hier werden die verschiedenen collada Objekte mit Hilfe der geladenen Assets erstellt -->
+      <a-collada-model id="schrank" src="#schrank_dae" position="0 0 0" rotation="0 0 0" shadow="cast: true; receive: true;"></a-collada-model>
+      <a-collada-model id="brille" src="#brille_dae" position="-3, -0.85, 1" rotation="0 0 0" shadow="cast: true; receive: true;">
+          <a-animation attribute="position" begin="found" dur="5000" to="0 0 0"></a-animation>
+      </a-collada-model>
+
+  </a-scene>
+</body>
+
 </html>
