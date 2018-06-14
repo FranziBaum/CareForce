@@ -26,7 +26,8 @@ function loadHandler() {
         glasses.changeMood(patient, 'sad');
 }
     };
-    context.mouseClicked = function () {
+
+   context.mouseClicked = function () {
     }
 
 }
