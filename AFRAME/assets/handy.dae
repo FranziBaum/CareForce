@@ -4,8 +4,8 @@
         <contributor>
             <authoring_tool>CINEMA4D 19.053 COLLADA Exporter</authoring_tool>
         </contributor>
-        <created>2018-06-11T17:39:30Z</created>
-        <modified>2018-06-11T17:39:30Z</modified>
+        <created>2018-06-13T18:54:24Z</created>
+        <modified>2018-06-13T18:54:24Z</modified>
         <unit meter="0.01" name="centimeter"/>
         <up_axis>Y_UP</up_axis>
     </asset>
@@ -1116,8 +1116,8 @@
     <library_visual_scenes>
         <visual_scene id="ID118">
             <node id="ID119" name="Handy">
-                <translate sid="translate">60.281 -26.9554 -222.467</translate>
-                <rotate sid="rotateY">0 1 0 -0</rotate>
+                <translate sid="translate">-172.446 -26.9554 -47.3227</translate>
+                <rotate sid="rotateY">0 1 0 90</rotate>
                 <rotate sid="rotateX">1 0 0 0</rotate>
                 <rotate sid="rotateZ">0 0 1 -0</rotate>
                 <scale sid="scale">1 1 1</scale>

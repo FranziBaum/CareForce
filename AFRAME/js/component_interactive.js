@@ -25,13 +25,10 @@ AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Name
   });
     
     },
-    update: function (a) {
+    update: function () {
  
 
       },
-    tick: function () { //Die "tick"-Funktion wird andauernd aufgerufen. (siehe draw() Funktion in p5)
-
-    }
 });
 
 
