@@ -26,7 +26,6 @@ AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Name
     
     },
     update: function () {
- 
 
       },
 });
