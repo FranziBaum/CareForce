@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 
-<!--Ich bin für's gute Aussehen!-->
-
 <html>
     <head>
-        <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-        <script src="component.js" type="module"></script>
-        <script src="class.js" type="module"></script>
+        <script src="js/aframe.min.js"></script>
+        <script src="js/component.js" type="component"></script>
+        <script src="js/InteractiveObject.js" type="module"></script>
     </head>
     <body>
         <a-scene>
-                <a-box interactiveobject="name: glasses" position="-1 0.5 -3" rotation="0 45 0" color="red"></a-box>
+                <a-box interactiveobject position="-1 0.5 -3" rotation="0 45 0" color="red"></a-box>
         </a-scene>
     </body>
 </html>

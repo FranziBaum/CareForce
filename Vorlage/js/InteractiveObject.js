@@ -14,12 +14,6 @@ export default class InteractiveObject{ //zb. Brille, Buch, ...
     }
     interact(){
         this.found = true;
-        animate();
     }
-
-    animate(){
-
-    }
-    
 
 }
