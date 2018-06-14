@@ -1,5 +1,6 @@
 /*jslint esversion: 6 */
-import InteractiveObject from "./InteractiveObject.js";
+
+import {InteractiveObject} from './InteractiveObject.js';
 
 AFRAME.registerComponent('interactiveobject', {
     schema: {
@@ -9,6 +10,7 @@ AFRAME.registerComponent('interactiveobject', {
     init: function(){
         console.log("init");
         var brille = new InteractiveObject(0,1,1,0,10000,20);
+
     },
 
     update: function(){
