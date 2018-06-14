@@ -3,7 +3,7 @@
 
 AFRAME.registerComponent('interactiveobject', {
     schema: {
-        name: { type: 'string', default: '' },
+        name: { type: 'string', default: '' }
         
         },
   
