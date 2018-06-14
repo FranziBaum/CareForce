@@ -4,11 +4,10 @@ export default class Glasses{
     constructor(){
         this.x = random(0,windowWidth);
         this.y = random(0,windowHeight);
-        this.c = 0;
+        this.c = 0; //color
         this.timerstart = millis(); //millis() gibt die Zeit in Sekunden/1000 seitdem das Programm läuft
         this.timerduration = 5000;
         this.timer = this.timerduration;
-
     }
     display(){
         fill(this.c);
@@ -37,7 +36,7 @@ export default class Glasses{
 
     found(){
         this.c = 255;
-
+        
     }
 
     expire(){
@@ -48,7 +47,4 @@ export default class Glasses{
             return false;
         }
     }
-
-
-
 }
