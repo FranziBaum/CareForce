@@ -34,24 +34,8 @@
                         decay: 2;" position="0 0 0"></a-entity>
       <!-- Es gibt verschiedene Arten von Lichtern (type). Diese können Schatten werfen (castShadow). Die Intensität kann auch verändert werden (intensity). Die Stärke des Abklingens kann auch verändert werden (decay).-->
     </a-box>
-<<<<<<< HEAD
 
  
-=======
-    <a-sphere position="0 30 -13" height="0.2" color="yellow" shadow="cast: false; receive: false">
-
-
-      <!-- Hier wird eine Box erstellt. Sie verkörpert die nachfolgend erstellten Lichter.-->
-      <a-entity id="sun" light="type: point;
-                          castShadow: true; 
-                          intensity:0.5; 
-                          decay: 2;" position="0 0 0">
-        <a-animation attribute="light.intensity" begin="0.5" dur="30000" to="0" repeat="indefinite" direction="alternate"></a-animation>
-
-
-      </a-entity>
-    </a-sphere>
->>>>>>> 85ff421a03f70f64f3125a9bc0d3993e70e20659
     <a-assets>
       <!-- Hier werden die Assets (Objekte, Bilder, Sounds, etc.) geladen mit denen wir arbeiten möchten.-->
       <a-asset-item id="room_dae" src="assets/room.dae"></a-asset-item>
@@ -83,33 +67,11 @@
 
     -->
 
-<<<<<<< HEAD
     <a-collada-model id="raum" src="#room_dae" position="0 0 0" rotation="0 0 0" shadow="cast: true; receive: true;"></a-object-model>
       <!-- Hier werden die verschiedenen collada Objekte mit Hilfe der geladenen Assets erstellt -->
       <a-collada-model id="schrank" src="#schrank_dae" position="0 0 0" rotation="0 0 0" shadow="cast: true; receive: true;"></a-collada-model>
       <a-collada-model id="brille" src="#brille_dae" position="0 0 0" rotation="0 0 0" shadow="cast: true; receive: true;">
           <a-animation attribute="position" begin="found" dur="5000" to="0 0 0"></a-animation>
-=======
-    <a-collada-model handy id="handy" src="#handy_dae" position="0 -0.6 0" rotation="0 90 0" shadow="cast: false; receive: false;">
-      <a-text id="uhr" value="12:30" rotation="-90 0 0" align="center" color="white" position="0.5 -0.3972 -0.5" wrap-count="150"></a-text>
-    </a-collada-model>
-
-    <a-collada-model id="raum" src="#room_dae" position="0 0 0" rotation="0 0 0" shadow="cast: true; receive: true;"></a-collada-model>
-
-    <a-collada-model interactive class="clickable" id="schrank" src="#schrank_dae" position="0 0 0" rotation="0 0 0" shadow="cast: true; receive: true;"></a-collada-model>
-
-    <a-collada-model interactive="event: found" class="clickable" id="brille" src="#brille_dae" position="-3, -0.85, 1" rotation="0 0 0"
-      shadow="cast: true; receive: true;">
-      <a-animation easing="ease-in" attribute="position" begin="found" dur="5000" to="0 0 0"></a-animation>
-    </a-collada-model>
-
-    <a-obj-model feedback id="heart" src="#heart_obj" position="2.5 -0.5 0" rotation="0 0 0" shadow="cast: true; receive: true;"></a-obj-model>
-
-    <a-collada-model interactive="event: play" class="clickable" id="plattenspieler" src="#plattenspieler_dae" position="0 0 2.4"
-      rotation="0 0 0" shadow="cast: true; receive: true;">
-      <a-collada-model id="platte" src="#platte_dae" position="0 0 0" rotation="0 0 0" shadow="cast: true; receive: true;">
-        <a-animation attribute="rotation" begin="play" dur="30000" to="0 1300 0"></a-animation>
->>>>>>> 4142f9e4ac3f2030f3ac26ce943c46e5995b13b3
       </a-collada-model>
     </a-collada-model>
     </a-collada-model>
