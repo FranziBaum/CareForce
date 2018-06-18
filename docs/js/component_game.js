@@ -7,14 +7,11 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         startTime: { type: 'int', default: 0 },
         currentTime: { type: 'int', default: 0 },
         firstChallengeTime: {type: 'int', default: 10000}
-
-
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
     this.data.startTime = Date.now();
     var challenges = document.querySelectorAll('a-collada-model[interactive]');
     var challengesArray = Array.from(challenges);
-    
     },
     update: function () {
     },
