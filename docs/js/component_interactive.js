@@ -6,18 +6,17 @@ AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Name
     schema: {   //Das Schema beinhaltet die Parameter einer Komponente. In diesem Fall nur der Zustand.
         isActive: { type: 'boolean', default: false }, //Der Parameter "isActive" beinhaltet einen boolean und ist standarweise "false".
         activeTime: { type: 'int', default: 10 },
-        affectMoodAmount: { type: 'int', default: 0 },
         event: {type: 'string', default: ''},
         message: {type: 'string', default: ''},
         influence: {type: 'int', default: 20}
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
-    var data= this.data;
-    var el= this.el;
+    var data= this.data; //data bezieht sich auf schema 
+    var el= this.el; // el spricht dieses Element an 
 
     el.addEventListener('click', function () {
         if(this.data.isActive){
-            el.emit(data.event);
+            el.emit(data.event); //element ruft event auf 
             console.log(data.event);
             data.isActive = false;
             el.classList.remove("clickable");
