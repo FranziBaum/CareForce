@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script src="js/aframe.min.js"></script>
+        <script src="js/vorlage_component.js"></script>
+    </head>
+    <body>
+        <a-scene>
+                <a-camera look-controls>
+                    <a-cursor raycaster="interval: 1000; objects: .clickable"></a-cursor>
+                </a-camera>
+                <a-box class="clickable" position="0 1 -2" color="blue"> 
+                    <a-animation                
+                    attribute="position" 
+                    from="0 1 -2" 
+                    to "0 3 2" 
+                    dur="10000" 
+                    begin="mouseover" 
+                    direction="alternate" 
+                    repeat="2">
+                    </a-animation>          
+                </a-box>
+        </a-scene>
+    </body>
+</html>
