@@ -4,7 +4,7 @@
 
 AFRAME.registerComponent('feedback', { //Hier wird ein Component mit dem Namen "interact" registriert.
     schema: {   //Das Schema beinhaltet die Parameter einer Komponente. In diesem Fall nur der Zustand.
-        value: { type: 'int', default: 0 },
+        value: { type: 'int', default: 100 },
 
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
@@ -13,10 +13,7 @@ AFRAME.registerComponent('feedback', { //Hier wird ein Component mit dem Namen "
     update: function () {
         var data= this.data;
         var el= this.el;
-<<<<<<< HEAD
 
-=======
->>>>>>> fcb28ea193e0aebbc7c09004f0fd3bb88ece63b6
         el.setAttribute('material', 'color','rgb('+Math.round((data.value/100)*255)+',0,'+Math.round(255-((data.value/100)*255))+')');
       },
 
