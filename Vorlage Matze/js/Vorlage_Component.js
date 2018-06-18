@@ -34,7 +34,6 @@ document.querySelectorAll('andereKomponente'); - spricht alle Elemente mit der a
 
  this.el.addEventListener('mouseover', function () {
     console.log("Das Event 'mouseover' wurde ausgelöst!");
-
 });
 
     erstellet einen sog. 'Event Listener' für ein Element (in diesem Fall: this.el)
