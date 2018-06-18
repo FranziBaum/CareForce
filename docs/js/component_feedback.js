@@ -13,15 +13,8 @@ AFRAME.registerComponent('feedback', { //Hier wird ein Component mit dem Namen "
     update: function () {
         var data= this.data;
         var el= this.el;
-<<<<<<< HEAD
         el.setAttribute('material', 'color','rgb('+Math.round((data.value/100)*255)+',0,'+Math.round(255-((data.value/100)*255))+')');
-=======
-<<<<<<< HEAD
->>>>>>> 7b6250854a26c68767f129f6e62d66ad417e726c
 
-=======
->>>>>>> fcb28ea193e0aebbc7c09004f0fd3bb88ece63b6
-        el.setAttribute('material', 'color','rgb('+Math.round((data.value/100)*255)+',0,'+Math.round(255-((data.value/100)*255))+')');
       },
 
 });
