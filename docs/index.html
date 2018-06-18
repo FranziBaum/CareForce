@@ -16,13 +16,11 @@
   <script src="js/component_game.js"></script>
   <script src="js/component_feedback.js"></script>
   <script src="js/component_handy.js"></script>
-
-
 </head>
 
 <body>
   <!-- Da es sich um ein HTML Dokument handelt gibt es einen body-tag für den Inhalt -->
-  <a-scene game shadow="basic" stats background="color: lightblue">
+  <a-scene game shadow="basic" background="color: lightblue">
     <a-animation attribute="color" begin="1000" dur="30000" to="black" repeat="indefinite" direction="alternate"></a-animation>
     <!-- Den Rahmen der VR Anwendung bildet der Tag <a-scene>. Hier wird also die "Szene" angelegt.-->
     <a-box position="0 0.7 0" height="0.2">
@@ -61,11 +59,14 @@
       <a-asset-item id="heart_obj" src="assets/heart.obj"></a-asset-item>
       <a-asset-item id="plattenspieler_dae" src="assets/plattenspieler.dae"></a-asset-item>
       <a-asset-item id="platte_dae" src="assets/platte.dae"></a-asset-item>
-    </a-assets>
+      <a-asset-item id="granny_dae" src="assets/granny.dae"></a-asset-item>
+      <a-asset-item id="tulip_obj" src="assets/tulip.obj"></a-asset-item>
+   </a-assets>
 
-    <a-camera position="-0.1 0.15 1" rotation="0 0 0" id="kamera1">    <!-- Hier wird dei Kamera/Sicht des Nutzers erstellt -->
-      <a-entity cursor="fuse: true; fuseTimeout: 1500" position="0 0 -0.5" geometry="primitive: circle; radius: 0.1" material="color: black; shader: flat; transparent: true; opacity: 0.8"
-        scale="0.1 0.1 0.1" raycaster="interval: 1000; objects: .clickable">
+    <a-entity camera position="-0.1 0.15 1" rotation="0 0 0" id="kamera1" look-controls>
+      <!-- Hier wird dei Kamera/Sicht des Nutzers erstellt -->
+      <a-cursor fuse="true" fuseTimeout="1500" raycaster="objects:.clickable" position="0 0 -0.5" geometry="primitive: circle; radius: 0.1"
+        material="color: black; shader: flat; transparent: true; opacity: 0.8" scale="0.1 0.1 0.1">
         <!-- Hier wird der Cursor mit seinen Animationen definiert -->
         <a-animation begin="fusing" easing="ease-out" attribute="scale" dur="100" fill="forwards" from="0.1 0.1 0.1" to="0.13 0.13 0.13"></a-animation>
         <a-animation begin="fusing" easing="ease-in" attribute="material.color" dur="50" fill="forwards" from="black" to="white"></a-animation>
@@ -73,33 +74,39 @@
           to="0.04 0.04 0.04"></a-animation>
         <a-animation begin="click" easing="ease-in" attribute="material.color" dur="200" fill="forwards" from="white" to="black"></a-animation>
         <a-animation begin="click" attribute="scale" dur="300" fill="forwards" easing="ease-in" from="0.04 0.04 0.04" to="0.1 0.1 0.1"></a-animation>
+        </a-cursor>
       </a-entity>
-    </a-camera>
 
       <!-- Hier werden die verschiedenen collada Objekte mit Hilfe der geladenen Assets erstellt -->
 
-    <a-collada-model id="handy" src="#handy_dae" position="0 -0.6 0" rotation="0 90 0" shadow="cast: false; receive: false;">
-      <a-text id="uhr" value="12:30" rotation="-90 0 0" align="center" color="white" position="0.5 -0.3972 -0.5" wrap-count="150"></a-text>
-    </a-collada-model>
-
-    <a-collada-model id="raum" src="#room_dae" position="0 0 0" rotation="0 0 0" shadow="cast: true; receive: true;"></a-collada-model>
-
-    <a-collada-model interactive id="schrank" src="#schrank_dae" position="0 0 0" rotation="0 0 0" shadow="cast: true; receive: true;"></a-collada-model>
-
-    <a-collada-model interactive="event:found" id="brille" src="#brille_dae" position="-3, -0.85, 1" rotation="0 0 0"
-      shadow="cast: true; receive: true;">
-      <a-animation attribute="position" begin="found" dur="5000" to="0 0 0"></a-animation>
-    </a-collada-model>
-
-    <a-obj-model feedback id="heart" src="#heart_obj" position="2.5 -0.5 0" rotation="0 0 0" shadow="cast: false; receive: false;"></a-obj-model>
-
-    <a-collada-model interactive="event:play" id="plattenspieler" src="#plattenspieler_dae" position="0 0 2.4"
-      rotation="0 0 0" shadow="cast: true; receive: true;">
-      <a-collada-model id="platte" src="#platte_dae" position="0 0 0" rotation="0 0 0" shadow="cast: false; receive: false;">
-        <a-animation attribute="rotation" begin="play" dur="30000" to="0 1300 0"></a-animation>
+     <a-collada-model id="granny" src="#granny_dae" position="-1 -0.5 0" scale="0.1 0.1 0.1" shadow="cast: true; receive: true;"></a-collada-model> 
+     
+     <a-obj-model feedback id="tulip" src="#tulip_obj" position="-2 -0.5 0.5" scale="0.01 0.01 0.01" shadow= "cast: true; receive: true;"></a-obj-model>
+     
+     
+     
+     
+      <a-collada-model handy id="handy" src="#handy_dae" position="0 -0.6 0" rotation="0 90 0" shadow="cast: false; receive: false;">
+        <a-text id="uhr" value="12:30" rotation="-90 0 0" align="center" color="white" position="0.5 -0.3972 -0.5" wrap-count="150"></a-text>
       </a-collada-model>
-    </a-collada-model>
-    </a-collada-model>
+
+      <a-collada-model id="raum" src="#room_dae" position="0 0 0" rotation="0 0 0" shadow="cast: true; receive: true;"></a-collada-model>
+
+      <a-collada-model interactive id="schrank" src="#schrank_dae" position="0 0 0" rotation="0 0 0" shadow="cast: true; receive: true;"></a-collada-model>
+
+      <a-collada-model interactive="event:found" id="brille" src="#brille_dae" position="-3, -0.85, 1" rotation="0 0 0" shadow="cast: true; receive: true;">
+        <a-animation attribute="position" begin="found" dur="5000" to="0 0 0"></a-animation>
+      </a-collada-model>
+
+      <a-obj-model feedback id="heart" src="#heart_obj" position="2.5 -0.5 0" rotation="0 0 0" shadow="cast: false; receive: false;"></a-obj-model>
+
+      <a-collada-model interactive="event:play" id="plattenspieler" src="#plattenspieler_dae" position="0 0 2.4" rotation="0 0 0"
+        shadow="cast: true; receive: true;">
+        <a-collada-model id="platte" src="#platte_dae" position="0 0 0" rotation="0 0 0" shadow="cast: false; receive: false;">
+          <a-animation attribute="rotation" begin="play" dur="30000" to="0 1300 0"></a-animation>
+        </a-collada-model>
+      </a-collada-model>
+      </a-collada-model>
 
 
 

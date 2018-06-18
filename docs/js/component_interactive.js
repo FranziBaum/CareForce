@@ -11,12 +11,12 @@ AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Name
         influence: {type: 'int', default: 20}
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
-    var data= this.data;
-    var el= this.el;
+    var data= this.data; //data bezieht sich auf schema 
+    var el= this.el; // el spricht dieses Element an 
 
     el.addEventListener('click', function () {
         if(this.data.isActive){
-            el.emit(data.event);
+            el.emit(data.event); //element ruft event auf 
             console.log(data.event);
             data.isActive = false;
             el.classList.remove("clickable");
@@ -30,6 +30,9 @@ AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Name
     update: function () {
         if(this.data.isActive){
             this.el.classList.add("clickable");
+        }
+        else{
+            el.classList.remove("clickable");
         }
 
       },
