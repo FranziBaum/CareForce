@@ -6,7 +6,10 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
     schema: {   //Das Schema beinhaltet die Parameter einer Komponente. In diesem Fall nur der Zustand.
         startTime: { type: 'int', default: 0 },
         currentTime: { type: 'int', default: 0 },
-        firstChallengeTime: {type: 'int', default: 10000}
+        firstChallengeTime: {type: 'int', default: 10000},
+        work: {type: 'int', default: 60},
+        care: {type: 'int', default: 20},
+        free: {type: 'int', default: 20}
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
     this.data.startTime = Date.now();

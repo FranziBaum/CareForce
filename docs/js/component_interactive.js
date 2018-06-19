@@ -10,7 +10,7 @@ AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Name
         message: { type: 'string', default: '' },
         influence: { type: 'int', default: 20 },
         startTime: {type: 'int', default: 0},
-        foundTime: {type: 'int', default: ''}
+        foundTime: {type: 'int'}
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
         var data = this.data; //data bezieht sich auf schema 
@@ -22,7 +22,7 @@ AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Name
                 el.emit(data.event); //element ruft event auf 
                 console.log(data.event);
                 data.isActive = false;
-                this.el.classList.remove("clickable");
+                el.classList.remove("clickable");
                 var heart = document.querySelector('#heart');
                 var heartvalue = heart.getAttribute('feedback').value;
                 heart.setAttribute('feedback', 'value', heartvalue + data.influence);
