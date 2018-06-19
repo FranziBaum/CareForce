@@ -31,12 +31,14 @@ AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Name
 
     },
     update: function () {
+        var cube = document.createElement('a-cube');
         if (this.data.isActive) {
             this.el.classList.add("clickable");
             this.data.startTime = Date.now();
         }
         else if(this.data.isActive == false) {
             this.el.classList.remove("clickable");
+
 
 
         }
