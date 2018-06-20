@@ -13,23 +13,8 @@ AFRAME.registerComponent('feedback', { //Hier wird ein Component mit dem Namen "
     update: function () {
         var data= this.data;
         var el= this.el;
-<<<<<<< HEAD
         el.setAttribute('material', 'color','rgb('+Math.round((data.value/100)*255)+',0,'+Math.round(255-((data.value/100)*255))+')');
 
-=======
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-        el.setAttribute('material', 'color','rgb('+Math.round((data.value/100)*255)+',0,'+Math.round(255-((data.value/100)*255))+')');
-
-=======
-
->>>>>>> 6cbd1aba472a9fca685aca5a71abbd5ec1a417a7
-        el.setAttribute('material', 'color','rgb('+Math.round((data.value/100)*255)+',0,'+Math.round(255-((data.value/100)*255))+')');
-
->>>>>>> 5f81e246f54dc8cc26cd6dd389827b5732fa3aa3
->>>>>>> b2a60a8ba3e0942b241d199d8a9b415927629fd9
       },
 
 });
