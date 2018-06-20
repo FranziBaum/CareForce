@@ -1,0 +1,977 @@
+<?xml version="1.0"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+    <asset>
+        <contributor>
+            <authoring_tool>CINEMA4D 19.053 COLLADA Exporter</authoring_tool>
+        </contributor>
+        <created>2018-06-18T12:20:25Z</created>
+        <modified>2018-06-18T12:20:25Z</modified>
+        <unit meter="0.01" name="centimeter"/>
+        <up_axis>Y_UP</up_axis>
+    </asset>
+    <library_images>
+        <image id="ID69">
+            <init_from>book_green.png</init_from>
+        </image>
+        <image id="ID74">
+            <init_from>book_yellow.png</init_from>
+        </image>
+        <image id="ID79">
+            <init_from>book_blue.png</init_from>
+        </image>
+        <image id="ID84">
+            <init_from>wall.png</init_from>
+        </image>
+        <image id="ID89">
+            <init_from>wood2.jpg.png</init_from>
+        </image>
+        <image id="ID94">
+            <init_from>wood.jpg.png</init_from>
+        </image>
+        <image id="ID101">
+            <init_from>wood_dark.png</init_from>
+        </image>
+        <image id="ID106">
+            <init_from>wood.png</init_from>
+        </image>
+        <image id="ID111">
+            <init_from>book_red.png</init_from>
+        </image>
+    </library_images>
+    <library_effects>
+        <effect id="ID2">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.501961 0.501961 0.501961 1</color>
+                        </diffuse>
+                        <transparent opaque="RGB_ZERO">
+                            <color>0.5 0.5 0.5 1</color>
+                        </transparent>
+                        <transparency>
+                            <float>1</float>
+                        </transparency>
+                        <index_of_refraction>
+                            <float>1</float>
+                        </index_of_refraction>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID4">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>1 1 1 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID6">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.6 0.294118 0 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID8">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <emission>
+                            <color>0 0 0 1</color>
+                        </emission>
+                        <diffuse>
+                            <color>1 1 1 1</color>
+                        </diffuse>
+                        <transparent opaque="RGB_ZERO">
+                            <color>1 1 1 1</color>
+                        </transparent>
+                        <transparency>
+                            <float>1</float>
+                        </transparency>
+                        <index_of_refraction>
+                            <float>1</float>
+                        </index_of_refraction>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID10">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <emission>
+                            <color>0 0 0 1</color>
+                        </emission>
+                        <diffuse>
+                            <color>0.501961 0.501961 0.501961 1</color>
+                        </diffuse>
+                        <transparent opaque="RGB_ZERO">
+                            <color>1 1 1 1</color>
+                        </transparent>
+                        <transparency>
+                            <float>0.5</float>
+                        </transparency>
+                        <index_of_refraction>
+                            <float>1</float>
+                        </index_of_refraction>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID12">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <emission>
+                            <color>0 0 0 1</color>
+                        </emission>
+                        <diffuse>
+                            <color>1 1 1 1</color>
+                        </diffuse>
+                        <transparent opaque="RGB_ZERO">
+                            <color>1 1 1 1</color>
+                        </transparent>
+                        <transparency>
+                            <float>1</float>
+                        </transparency>
+                        <index_of_refraction>
+                            <float>1</float>
+                        </index_of_refraction>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID14">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <emission>
+                            <color>0 0 0 1</color>
+                        </emission>
+                        <diffuse>
+                            <color>0.6 0.294118 0 1</color>
+                        </diffuse>
+                        <transparent opaque="RGB_ZERO">
+                            <color>1 1 1 1</color>
+                        </transparent>
+                        <transparency>
+                            <float>1</float>
+                        </transparency>
+                        <index_of_refraction>
+                            <float>1</float>
+                        </index_of_refraction>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID16">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.48 0.48 0.48 1</color>
+                        </diffuse>
+                        <specular>
+                            <color>0.2 0.2 0.2 1</color>
+                        </specular>
+                        <shininess>
+                            <float>0.89</float>
+                        </shininess>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID18">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>1 0.980392 0.921569 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID20">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.0705882 0.0705882 0.0705882 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID22">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.960784 0.545098 0.00784314 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID24">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.976471 0.94902 0.145098 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID26">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.176471 0.313726 0.0666667 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID28">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.227451 0.282353 0 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID30">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.0705882 0.580392 0.705882 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID32">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.992157 0 0.0705882 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID34">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>1 0.984314 0.560784 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID36">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.996078 0.360784 0.478431 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID38">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.494118 0 0.0352941 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID40">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.517647 0.309804 0.466667 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID42">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.454902 0.596078 0.0784314 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID44">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.537255 0.341176 0.0862745 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID46">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.168627 0.0352941 0.027451 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID48">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.937255 0.709804 0.992157 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID50">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.964706 0.917647 0.588235 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID52">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.968628 0.0862745 0.0196078 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID54">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.152941 0.196078 0.0588235 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID56">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.929412 0.929412 0.929412 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID58">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.588235 0.588235 0.588235 1</color>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID60">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>1 0.905 0.62 1</color>
+                        </diffuse>
+                        <specular>
+                            <color>0.2 0.2 0.2 1</color>
+                        </specular>
+                        <shininess>
+                            <float>0.71</float>
+                        </shininess>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID62">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.5544 0.74316 0.99 1</color>
+                        </diffuse>
+                        <specular>
+                            <color>0.2 0.2 0.2 1</color>
+                        </specular>
+                        <shininess>
+                            <float>0.5</float>
+                        </shininess>
+                        <transparent opaque="RGB_ZERO">
+                            <color>1 1 1 1</color>
+                        </transparent>
+                        <transparency>
+                            <float>0.58</float>
+                        </transparency>
+                        <index_of_refraction>
+                            <float>1</float>
+                        </index_of_refraction>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID64">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.79 0.42344 0.1027 1</color>
+                        </diffuse>
+                        <specular>
+                            <color>0.2 0.2 0.2 1</color>
+                        </specular>
+                        <shininess>
+                            <float>0.5</float>
+                        </shininess>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID66">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.85 0.85 0.85 1</color>
+                        </diffuse>
+                        <specular>
+                            <color>0.2 0.2 0.2 1</color>
+                        </specular>
+                        <shininess>
+                            <float>0.5</float>
+                        </shininess>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID68">
+            <profile_COMMON>
+                <newparam sid="ID70">
+                    <surface type="2D">
+                        <init_from>ID69</init_from>
+                    </surface>
+                </newparam>
+                <newparam sid="ID71">
+                    <sampler2D>
+                        <source>ID70</source>
+                    </sampler2D>
+                </newparam>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <texture texture="ID71" texcoord="UVSET0"/>
+                        </diffuse>
+                        <specular>
+                            <color>0.2 0.2 0.2 1</color>
+                        </specular>
+                        <shininess>
+                            <float>0.5</float>
+                        </shininess>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID73">
+            <profile_COMMON>
+                <newparam sid="ID75">
+                    <surface type="2D">
+                        <init_from>ID74</init_from>
+                    </surface>
+                </newparam>
+                <newparam sid="ID76">
+                    <sampler2D>
+                        <source>ID75</source>
+                    </sampler2D>
+                </newparam>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <texture texture="ID76" texcoord="UVSET0"/>
+                        </diffuse>
+                        <specular>
+                            <color>0.2 0.2 0.2 1</color>
+                        </specular>
+                        <shininess>
+                            <float>0.5</float>
+                        </shininess>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID78">
+            <profile_COMMON>
+                <newparam sid="ID80">
+                    <surface type="2D">
+                        <init_from>ID79</init_from>
+                    </surface>
+                </newparam>
+                <newparam sid="ID81">
+                    <sampler2D>
+                        <source>ID80</source>
+                    </sampler2D>
+                </newparam>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <texture texture="ID81" texcoord="UVSET0"/>
+                        </diffuse>
+                        <specular>
+                            <color>0.2 0.2 0.2 1</color>
+                        </specular>
+                        <shininess>
+                            <float>0.5</float>
+                        </shininess>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID83">
+            <profile_COMMON>
+                <newparam sid="ID85">
+                    <surface type="2D">
+                        <init_from>ID84</init_from>
+                    </surface>
+                </newparam>
+                <newparam sid="ID86">
+                    <sampler2D>
+                        <source>ID85</source>
+                    </sampler2D>
+                </newparam>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <texture texture="ID86" texcoord="UVSET0"/>
+                        </diffuse>
+                        <specular>
+                            <color>0.2 0.2 0.2 1</color>
+                        </specular>
+                        <shininess>
+                            <float>0.5</float>
+                        </shininess>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID88">
+            <profile_COMMON>
+                <newparam sid="ID90">
+                    <surface type="2D">
+                        <init_from>ID89</init_from>
+                    </surface>
+                </newparam>
+                <newparam sid="ID91">
+                    <sampler2D>
+                        <source>ID90</source>
+                    </sampler2D>
+                </newparam>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <texture texture="ID91" texcoord="UVSET0"/>
+                        </diffuse>
+                        <specular>
+                            <color>0.2 0.2 0.2 1</color>
+                        </specular>
+                        <shininess>
+                            <float>0.19</float>
+                        </shininess>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID93">
+            <profile_COMMON>
+                <newparam sid="ID95">
+                    <surface type="2D">
+                        <init_from>ID94</init_from>
+                    </surface>
+                </newparam>
+                <newparam sid="ID96">
+                    <sampler2D>
+                        <source>ID95</source>
+                    </sampler2D>
+                </newparam>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <texture texture="ID96" texcoord="UVSET0"/>
+                        </diffuse>
+                        <specular>
+                            <color>0.2 0.2 0.2 1</color>
+                        </specular>
+                        <shininess>
+                            <float>0.28</float>
+                        </shininess>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID98">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.6 0.893333 1 1</color>
+                        </diffuse>
+                        <specular>
+                            <color>0.2 0.2 0.2 1</color>
+                        </specular>
+                        <shininess>
+                            <float>0.81</float>
+                        </shininess>
+                        <transparent opaque="RGB_ZERO">
+                            <color>1 1 1 1</color>
+                        </transparent>
+                        <transparency>
+                            <float>0.94</float>
+                        </transparency>
+                        <index_of_refraction>
+                            <float>1.6</float>
+                        </index_of_refraction>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID100">
+            <profile_COMMON>
+                <newparam sid="ID102">
+                    <surface type="2D">
+                        <init_from>ID101</init_from>
+                    </surface>
+                </newparam>
+                <newparam sid="ID103">
+                    <sampler2D>
+                        <source>ID102</source>
+                    </sampler2D>
+                </newparam>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <texture texture="ID103" texcoord="UVSET0"/>
+                        </diffuse>
+                        <specular>
+                            <color>0.2 0.2 0.2 1</color>
+                        </specular>
+                        <shininess>
+                            <float>0.5</float>
+                        </shininess>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID105">
+            <profile_COMMON>
+                <newparam sid="ID107">
+                    <surface type="2D">
+                        <init_from>ID106</init_from>
+                    </surface>
+                </newparam>
+                <newparam sid="ID108">
+                    <sampler2D>
+                        <source>ID107</source>
+                    </sampler2D>
+                </newparam>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <texture texture="ID108" texcoord="UVSET0"/>
+                        </diffuse>
+                        <specular>
+                            <color>0.2 0.2 0.2 1</color>
+                        </specular>
+                        <shininess>
+                            <float>0.5</float>
+                        </shininess>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID110">
+            <profile_COMMON>
+                <newparam sid="ID112">
+                    <surface type="2D">
+                        <init_from>ID111</init_from>
+                    </surface>
+                </newparam>
+                <newparam sid="ID113">
+                    <sampler2D>
+                        <source>ID112</source>
+                    </sampler2D>
+                </newparam>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <texture texture="ID113" texcoord="UVSET0"/>
+                        </diffuse>
+                        <specular>
+                            <color>0.2 0.2 0.2 1</color>
+                        </specular>
+                        <shininess>
+                            <float>0.5</float>
+                        </shininess>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+    </library_effects>
+    <library_materials>
+        <material id="ID1" name="dbl_skpB7B1_003">
+            <instance_effect url="#ID2"/>
+        </material>
+        <material id="ID3" name="dbl_skpB7B1_002">
+            <instance_effect url="#ID4"/>
+        </material>
+        <material id="ID5" name="dbl_skpB7B1_001">
+            <instance_effect url="#ID6"/>
+        </material>
+        <material id="ID7" name="dbl_skpB7B1_004">
+            <instance_effect url="#ID8"/>
+        </material>
+        <material id="ID9" name="dbl_skpB7B1_003">
+            <instance_effect url="#ID10"/>
+        </material>
+        <material id="ID11" name="dbl_skpB7B1_002">
+            <instance_effect url="#ID12"/>
+        </material>
+        <material id="ID13" name="dbl_skpB7B1_001">
+            <instance_effect url="#ID14"/>
+        </material>
+        <material id="ID15" name="metall">
+            <instance_effect url="#ID16"/>
+        </material>
+        <material id="ID17" name="Wall">
+            <instance_effect url="#ID18"/>
+        </material>
+        <material id="ID19" name="Den1">
+            <instance_effect url="#ID20"/>
+        </material>
+        <material id="ID21" name="NhiHoa3">
+            <instance_effect url="#ID22"/>
+        </material>
+        <material id="ID23" name="Hoa4">
+            <instance_effect url="#ID24"/>
+        </material>
+        <material id="ID25" name="LaCay3">
+            <instance_effect url="#ID26"/>
+        </material>
+        <material id="ID27" name="DayLeo">
+            <instance_effect url="#ID28"/>
+        </material>
+        <material id="ID29" name="Hoa6">
+            <instance_effect url="#ID30"/>
+        </material>
+        <material id="ID31" name="Hoa2">
+            <instance_effect url="#ID32"/>
+        </material>
+        <material id="ID33" name="Hoa5">
+            <instance_effect url="#ID34"/>
+        </material>
+        <material id="ID35" name="Hoa3">
+            <instance_effect url="#ID36"/>
+        </material>
+        <material id="ID37" name="NhiHoa2">
+            <instance_effect url="#ID38"/>
+        </material>
+        <material id="ID39" name="ChauHoa3_">
+            <instance_effect url="#ID40"/>
+        </material>
+        <material id="ID41" name="LaCay_1">
+            <instance_effect url="#ID42"/>
+        </material>
+        <material id="ID43" name="ChauHoa2">
+            <instance_effect url="#ID44"/>
+        </material>
+        <material id="ID45" name="ChauHoa4">
+            <instance_effect url="#ID46"/>
+        </material>
+        <material id="ID47" name="ChauHoa5">
+            <instance_effect url="#ID48"/>
+        </material>
+        <material id="ID49" name="Hoa1">
+            <instance_effect url="#ID50"/>
+        </material>
+        <material id="ID51" name="NhiHoa">
+            <instance_effect url="#ID52"/>
+        </material>
+        <material id="ID53" name="Material__0">
+            <instance_effect url="#ID54"/>
+        </material>
+        <material id="ID55" name="_14_-_Default">
+            <instance_effect url="#ID56"/>
+        </material>
+        <material id="ID57" name="_13_-_Default">
+            <instance_effect url="#ID58"/>
+        </material>
+        <material id="ID59" name="porzellan">
+            <instance_effect url="#ID60"/>
+        </material>
+        <material id="ID61" name="Wasser">
+            <instance_effect url="#ID62"/>
+        </material>
+        <material id="ID63" name="Kissen">
+            <instance_effect url="#ID64"/>
+        </material>
+        <material id="ID65" name="Matratze">
+            <instance_effect url="#ID66"/>
+        </material>
+        <material id="ID67" name="book_green">
+            <instance_effect url="#ID68"/>
+        </material>
+        <material id="ID72" name="book_yellow">
+            <instance_effect url="#ID73"/>
+        </material>
+        <material id="ID77" name="book_blue">
+            <instance_effect url="#ID78"/>
+        </material>
+        <material id="ID82" name="innerwall">
+            <instance_effect url="#ID83"/>
+        </material>
+        <material id="ID87" name="wood1">
+            <instance_effect url="#ID88"/>
+        </material>
+        <material id="ID92" name="wood2">
+            <instance_effect url="#ID93"/>
+        </material>
+        <material id="ID97" name="glass">
+            <instance_effect url="#ID98"/>
+        </material>
+        <material id="ID99" name="wood3">
+            <instance_effect url="#ID100"/>
+        </material>
+        <material id="ID104" name="wood4">
+            <instance_effect url="#ID105"/>
+        </material>
+        <material id="ID109" name="book_red">
+            <instance_effect url="#ID110"/>
+        </material>
+    </library_materials>
+    <library_geometries>
+        <geometry id="ID117">
+            <mesh>
+                <source id="ID118">
+                    <float_array id="ID119" count="24">-4 -18 13.5 -4 18 13.5 4 -18 13.5 4 18 13.5 4 -18 -13.5 4 18 -13.5 -4 -18 -13.5 -4 18 -13.5</float_array>
+                    <technique_common>
+                        <accessor count="8" source="#ID119" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID120">
+                    <float_array id="ID121" count="18">0 0 1 1 0 -0 0 0 -1 -1 0 -0 0 1 -0 0 -1 -0</float_array>
+                    <technique_common>
+                        <accessor count="6" source="#ID121" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID122">
+                    <float_array id="ID123" count="48">0.869088 0.507325 0.869088 0.992675 0.991674 0.992675 0.991674 0.507325 0.00832552 0.507325 0.00832552 0.992675 0.422056 0.992675 0.422056 0.507325 0.00832552 0.00732505 0.00832552 0.492675 0.130912 0.492675 0.130912 0.00732505 0.438707 0.507325 0.438707 0.992675 0.852437 0.992675 0.852437 0.507325 0.147563 0.128663 0.147563 0.492675 0.27015 0.492675 0.27015 0.128663 0.286801 0.128663 0.286801 0.492675 0.409388 0.492675 0.409388 0.128663</float_array>
+                    <technique_common>
+                        <accessor count="24" source="#ID123" stride="2">
+                            <param name="S" type="float"/>
+                            <param name="T" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="ID124">
+                    <input semantic="POSITION" source="#ID118"/>
+                </vertices>
+                <polylist count="6" material="Material1">
+                    <input offset="0" semantic="VERTEX" source="#ID124"/>
+                    <input offset="1" semantic="NORMAL" source="#ID120"/>
+                    <input offset="2" semantic="TEXCOORD" source="#ID122" set="0"/>
+                    <vcount>4 4 4 4 4 4</vcount>
+                    <p>2 0 3 3 0 2 1 0 1 0 0 0 4 1 7 5 1 6 3 1 5 2 1 4 6 2 11 7 2 10 5 2 9 4 2 8 0 3 15 1 3 14 7 3 13 6 3 12 3 4 19 5 4 18 7 4 17 1 4 16 4 5 23 2 5 22 0 5 21 6 5 20</p>
+                </polylist>
+            </mesh>
+        </geometry>
+    </library_geometries>
+    <library_visual_scenes>
+        <visual_scene id="ID114">
+            <node id="ID115" name="Schrank">
+                <translate sid="translate">10.5573 -9.7193 -0.778356</translate>
+                <rotate sid="rotateY">0 1 0 -0</rotate>
+                <rotate sid="rotateX">1 0 0 0</rotate>
+                <rotate sid="rotateZ">0 0 1 -0</rotate>
+                <scale sid="scale">1 1 1</scale>
+                <node id="ID116" name="W&#xFC;rfel.10">
+                    <translate sid="translate">-10.5571 -17.7193 0.779252</translate>
+                    <rotate sid="rotateY">0 1 0 -0</rotate>
+                    <rotate sid="rotateX">1 0 0 0</rotate>
+                    <rotate sid="rotateZ">0 0 1 -0</rotate>
+                    <scale sid="scale">1 1 1</scale>
+                    <instance_geometry url="#ID117">
+                        <bind_material>
+                            <technique_common>
+                                <instance_material symbol="Material1" target="#ID67">
+                                    <bind_vertex_input semantic="UVSET0" input_semantic="TEXCOORD" input_set="0"/>
+                                </instance_material>
+                            </technique_common>
+                        </bind_material>
+                    </instance_geometry>
+                </node>
+            </node>
+        </visual_scene>
+    </library_visual_scenes>
+    <scene>
+        <instance_visual_scene url="#ID114"/>
+    </scene>
+</COLLADA>
