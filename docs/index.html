@@ -43,12 +43,9 @@
       <a-asset-item id="tulip_mtl" src="assets/tulip.mtl"></a-asset-item>
     </a-assets>
 
-<<<<<<< HEAD
     <a-entity camera="userHeight:0" position="-0.1 0 1" rotation="0 0 0" id="kamera1" look-controls>
       <!-- Hier wird dei Kamera/Sicht des Nutzers erstellt -->
-=======
     <a-entity camera="userHeight:0" position="-0.1 0 1" rotation="0 0 0" id="kamera1" look-controls wasd-controls>
->>>>>>> e3f07b640214ee2542a56ea9ce339364f2a2965f
       <a-cursor fuse="true" fuseTimeout="1500" raycaster="objects:.clickable" position="0 0 -0.5" geometry="primitive: circle; radius: 0.1"
         material="color: white; shader: flat; transparent: true; opacity: 0.8" scale="0.1 0.1 0.1">
         <a-animation begin="fusing" easing="ease-out" attribute="scale" dur="100" fill="forwards" from="0.1 0.1 0.1" to="0.13 0.13 0.13"></a-animation>
@@ -58,11 +55,15 @@
       </a-cursor>
     </a-entity>
 
-    <a-light id="roomlamp" type="point" position="0 0 0" intensity="0.06"></a-light>
-    <a-plane button="value: 1" position="-1.5 0 -0.85" width="1" height="0.5" color="grey" shader="flat" rotation="0 20 0"></a-plane>
-    <a-plane button="value: 2" position="0 0 -1" width="1" height="0.5" color="grey" shader="flat" rotation="0 0 0" class="clickable"></a-plane>
-    <a-plane button="value: 4" position="1.5 0 -0.85" width="1" height="0.5" color="grey" shader="flat" rotation="0 -20 0"></a-plane>
 
+    <a-text id="poem" value="Wie viel Zeit kannst du aufbringen?" color="white" width="1.5" position="-0.6 0.3 0" ></a-text>
+    <a-text id="bye" value="Was willst du tun?" color="white" width="1.5" position="-0.35 0.3 0" ></a-text>
+   
+    <a-light id="roomlamp" type="point" position="0 0 0" intensity="0.06"></a-light>
+    <a-plane class="pick" button="value: 1" position="-1.5 0 -0.85" width="1" height="0.5" color="grey" shader="flat" rotation="0 20 0"></a-plane>
+    <a-plane class="pick" button="value: 2" position="0 0 -1" width="1" height="0.5" color="grey" shader="flat" rotation="0 0 0" class="clickable"></a-plane>
+    <a-plane class="pick" button="value: 4" position="1.5 0 -0.85" width="1" height="0.5" color="grey" shader="flat" rotation="0 -20 0"></a-plane>
+    <a-plane id="endgame" button="value: End Game" position="0 -1 -1" width="1" height="0.5" color="grey" shader="flat" rotation="0 0 0"></a-plane>
 
 
 

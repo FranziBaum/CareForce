@@ -9,7 +9,13 @@ AFRAME.registerComponent('button', {
     init: function () { 
         textelement = document.createElement('a-text');
         this.el.appendChild(textelement);
-        textelement.setAttribute('value', this.data.value + " h");
+        if(this.el.id == 'endgame'){
+        textelement.setAttribute('value', this.data.value);
+        }
+        else{
+            textelement.setAttribute('value', this.data.value + " h");
+
+        }
         textelement.setAttribute('color', "black");
         textelement.setAttribute('align', "center");
         textelement.setAttribute('width', 3);
