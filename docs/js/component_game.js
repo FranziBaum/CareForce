@@ -8,7 +8,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         currentTime: { type: 'int', default: 0 },
         firstChallengeTime: { type: 'int', default: 10000 },
         caretime: { type: 'int', default: 20 },
-        state: { type: 'string', default: 'decide' },
+        state: { type: 'string', default: 'outro' },
         challenges: { type: 'array' }
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
@@ -22,8 +22,9 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         var roomlamp = document.getElementById('roomlamp');
         var buttons = document.getElementsByClassName("pick");
         var headline = document.getElementById("poem");
-        var end= document.getElementById("endgame")
-        var choose= document.getElementById("bye")
+        var end= document.getElementById("endgame");
+        var choose= document.getElementById("bye");
+        var message= document.getElementById("elixir");
         if (this.data.state == 'start') {
 
         }
@@ -35,9 +36,11 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         }
            headline.setAttribute("visible", true);
 
-           choose.setAttribute("visibeel", false);
+           choose.setAttribute("visible", false);
 
            end.setAttribute("visible",false);
+
+           message.setAttribute("visible", false);
         }
         else if (this.data.state == 'play') {
  
@@ -50,6 +53,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
             headline.setAttribute("visible", false);
             end.setAttribute("visible",false);
             choose.setAttribute("visible", false);
+            message.setAttribute("visible", false);
 
             for(var i = 0; i < buttons.length; i++){
                 buttons.item(i).setAttribute("visible", false);
@@ -61,15 +65,27 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
 
             for(var i = 0; i < buttons.length; i++){
                 buttons.item(i).setAttribute("visible", true);
+            
             }
            
             end.setAttribute("visible",true);
             choose.setAttribute("visibel", true);
             headline.setAttribute("visible", false);
+            message.setAttribute("visible", false);
 
         }
         else if (this.data.state == 'outro') {
-
+            
+            for(var i = 0; i < buttons.length; i++){
+                buttons.item(i).setAttribute("visible", false);
+            }
+               headline.setAttribute("visible", false);
+    
+               choose.setAttribute("visible", false);
+    
+               end.setAttribute("visible",false);
+            
+            message.setAttribute("visible", true);
         }
     },
     tick: function () {
