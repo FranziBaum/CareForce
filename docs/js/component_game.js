@@ -8,7 +8,13 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         currentTime: { type: 'int', default: 0 },
         firstChallengeTime: { type: 'int', default: 10000 },
         caretime: { type: 'int', default: 20 },
+<<<<<<< HEAD
         state: { type: 'string', default: 'start' },
+=======
+
+        state: { type: 'string', default: 'decide' },
+
+>>>>>>> 5435ce128e03eee721bc3f7a07cd87c14b023212
         challenges: { type: 'array' }
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
@@ -38,7 +44,21 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
 
 
 
+            for(var i = 0; i < buttons.length; i++){
+                buttons.item(i).setAttribute("visible", false);
+            }
+               headline.setAttribute("visible", false);
+    
+               choose.setAttribute("visible", false);
+    
+               end.setAttribute("visible",false);
+            
+            message.setAttribute("visible", false);
+
+            next.setAttribute("visible",false);
         }
+
+        
         else if (this.data.state == 'intro') {
 
 
@@ -52,6 +72,8 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
            end.setAttribute("visible",false);
 
            message.setAttribute("visible", false);
+
+           next.setAttribute("visible",true);
         }
         else if (this.data.state == 'play') {
             
@@ -65,6 +87,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
             end.setAttribute("visible",false);
             choose.setAttribute("visible", false);
             message.setAttribute("visible", false);
+            next.setAttribute("visible",false);
 
             for(var i = 0; i < buttons.length; i++){
                 buttons.item(i).setAttribute("visible", false);
@@ -83,6 +106,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
             choose.setAttribute("visibel", true);
             headline.setAttribute("visible", false);
             message.setAttribute("visible", false);
+            next.setAttribute("visible",true);
 
         }
         else if (this.data.state == 'outro') {
@@ -97,6 +121,8 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
                end.setAttribute("visible",false);
             
             message.setAttribute("visible", true);
+
+            next.setAttribute("visible",false);
         }
     },
     tick: function () {
