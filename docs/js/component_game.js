@@ -27,9 +27,19 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         var end= document.getElementById("endgame");
         var choose= document.getElementById("bye");
         var message= document.getElementById("elixir");
-        var next= document.getElementById("continue");
-       
+        var scene = document.getElementById("scene");
+        var ambientlight = document.getElementById("ambientlight");
+        var roomlamp = document.getElementById("roomlamp");
+        var sun = document.getElementById("sun");
+        var next = document.getElementById('next');
+
+
         if (this.data.state == 'start') {
+            ambientlight.setAttribute('intensity',0);
+            roomlamp.setAttribute('intensity',0);
+            sun.setAttribute('intensity',0);
+
+
 
             for(var i = 0; i < buttons.length; i++){
                 buttons.item(i).setAttribute("visible", false);
@@ -63,8 +73,8 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
            next.setAttribute("visible",true);
         }
         else if (this.data.state == 'play') {
- 
-
+            
+            scene.setAttribute('background','color','lightblue');
 
             granny.setAttribute('visible', true);
             handy.setAttribute('visible', true);
