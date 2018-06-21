@@ -8,13 +8,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         currentTime: { type: 'int', default: 0 },
         firstChallengeTime: { type: 'int', default: 10000 },
         caretime: { type: 'int', default: 20 },
-<<<<<<< HEAD
         state: { type: 'string', default: 'start' },
-=======
-
-        state: { type: 'string', default: 'decide' },
-
->>>>>>> 5435ce128e03eee721bc3f7a07cd87c14b023212
         challenges: { type: 'array' }
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
