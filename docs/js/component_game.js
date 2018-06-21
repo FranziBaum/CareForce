@@ -9,7 +9,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         firstChallengeTime: { type: 'int', default: 10000 },
         caretime: { type: 'int', default: 20 },
 
-        state: { type: 'string', default: 'decide' },
+        state: { type: 'string', default: 'play' },
 
         challenges: { type: 'array' }
     },
