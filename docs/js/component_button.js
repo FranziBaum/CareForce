@@ -1,12 +1,12 @@
 /* jslint esversion: 6 */
 
 
-AFRAME.registerComponent('button', { 
-    schema: {  
-        value:{type: 'string', default:''}
+AFRAME.registerComponent('button', {
+    schema: {
+        value: { type: 'string', default: '' }
 
     },
-    init: function () { 
+    init: function () {
         textelement = document.createElement('a-text');
         this.el.appendChild(textelement);
         if(this.el.id == 'endgame'){
@@ -21,19 +21,21 @@ AFRAME.registerComponent('button', {
         textelement.setAttribute('width', 3);
         this.el.classList.add('clickable');
         var game = document.querySelector('game');
-        var buttons = document.querySelectorAll('button');
+        var sceneEl = document.querySelector('a-scene');
 
-        this.el.addEventListener('click', function(){
+        var buttons = sceneEl.querySelectorAll('a-plane');
+        console.log(buttons);
 
-            [].forEach.call(buttons, function() {
-                console.log(buttons);
-                buttons.setAttribute('color','grey');
-              });
-    
-            this.setAttribute('color','red');
+        this.el.addEventListener('click', function () {
+
+            for (var i = 0; i < buttons.length; i++) {
+                buttons.item(i).setAttribute('color', 'grey');
+            }
+
+            this.setAttribute('color', 'red');
 
         });
-        
+
     },
     update: function () {
 
