@@ -8,7 +8,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         currentTime: { type: 'int', default: 0 },
         firstChallengeTime: { type: 'int', default: 10000 },
         caretime: { type: 'int', default: 20 },
-        state: { type: 'string', default: 'play' },
+        state: { type: 'string', default: 'decide' },
         challenges: { type: 'array' }
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
@@ -29,7 +29,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         var ambientlight = document.getElementById("ambientlight");
         var roomlamp = document.getElementById("roomlamp");
         var sun = document.getElementById("sun");
-        var next = document.getElementById('next');
+        var next = document.getElementById('continue');
 
         if (this.data.state == 'start') {
             ambientlight.setAttribute('intensity',0);
