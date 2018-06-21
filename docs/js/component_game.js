@@ -8,7 +8,19 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         currentTime: { type: 'int', default: 0 },
         firstChallengeTime: { type: 'int', default: 10000 },
         caretime: { type: 'int', default: 20 },
+<<<<<<< HEAD
         state: { type: 'string', default: 'play' },
+=======
+<<<<<<< HEAD
+        state: { type: 'string', default: 'start' },
+=======
+<<<<<<< HEAD
+        state: { type: 'string', default: 'intro' },
+=======
+        state: { type: 'string', default: 'outro' },
+>>>>>>> edf74f1a12b64fb34027e3fae5804453c52f21eb
+>>>>>>> ee77f2d62403bb4b6ee23221b04634d621384280
+>>>>>>> 7ef3a8f1afa042c5d261b00d3dc29f8d3d5758fb
         challenges: { type: 'array' }
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
@@ -27,7 +39,19 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         var message= document.getElementById("elixir");
         if (this.data.state == 'start') {
 
+            for(var i = 0; i < buttons.length; i++){
+                buttons.item(i).setAttribute("visible", false);
+            }
+               headline.setAttribute("visible", false);
+    
+               choose.setAttribute("visible", false);
+    
+               end.setAttribute("visible",false);
+            
+            message.setAttribute("visible", false);
         }
+
+        
         else if (this.data.state == 'intro') {
 
 
