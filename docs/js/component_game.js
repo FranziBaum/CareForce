@@ -8,7 +8,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         currentTime: { type: 'int', default: 0 },
         firstChallengeTime: { type: 'int', default: 10000 },
         caretime: { type: 'int', default: 20 },
-        state: { type: 'string', default: 'play' },
+        state: { type: 'string', default: 'decide' },
         challenges: { type: 'array' }
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
@@ -17,27 +17,55 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         this.data.challenges = Array.from(challenges);
     },
     update: function () {
+        var granny = document.getElementById('granny');
+        var handy = document.getElementById('handy');
+        var roomlamp = document.getElementById('roomlamp');
+        var buttons = document.getElementsByClassName("pick");
+        var headline = document.getElementById("poem");
+        var end= document.getElementById("endgame")
+        var choose= document.getElementById("bye")
         if (this.data.state == 'start') {
 
         }
         else if (this.data.state == 'intro') {
 
+
+           for(var i = 0; i < buttons.length; i++){
+            buttons.item(i).setAttribute("visible", true);
+        }
+           headline.setAttribute("visible", true);
+
+           choose.setAttribute("visibeel", false);
+
+           end.setAttribute("visible",false);
         }
         else if (this.data.state == 'play') {
-            var granny = document.getElementById('granny');
-            var handy = document.getElementById('handy');
-            var roomlamp = document.getElementById('roomlamp');
+ 
 
 
             granny.setAttribute('visible', true);
             handy.setAttribute('visible', true);
             roomlamp.setAttribute('intensity', 0.7);
 
+            headline.setAttribute("visible", false);
+            end.setAttribute("visible",false);
+            choose.setAttribute("visible", false);
 
+            for(var i = 0; i < buttons.length; i++){
+                buttons.item(i).setAttribute("visible", false);
+            }
 
 
         }
         else if (this.data.state == 'decide') {
+
+            for(var i = 0; i < buttons.length; i++){
+                buttons.item(i).setAttribute("visible", true);
+            }
+           
+            end.setAttribute("visible",true);
+            choose.setAttribute("visibel", true);
+            headline.setAttribute("visible", false);
 
         }
         else if (this.data.state == 'outro') {
