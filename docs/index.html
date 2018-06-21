@@ -16,42 +16,16 @@
   <script src="js/component_game.js"></script>
   <script src="js/component_feedback.js"></script>
   <script src="js/component_handy.js"></script>
+  <script src="js/component_button.js"></script>
+
 </head>
 
 <body>
+
   <!-- Da es sich um ein HTML Dokument handelt gibt es einen body-tag für den Inhalt -->
-  <a-scene game shadow="basic" background="color: lightblue" stats>
-    <a-animation attribute="background.color" begin="1000" dur="30000" from="lightblue" to="black" repeat="indefinite" direction="alternate"></a-animation>
-    <!-- Den Rahmen der VR Anwendung bildet der Tag <a-scene>. Hier wird also die "Szene" angelegt.-->
-    <a-box position="0 0.7 0" height="0.1">
-      <!-- Hier wird eine Box erstellt. Sie verkörpert die nachfolgend erstellten Lichter.-->
-      <a-entity light="type: point;
-                        castShadow: true; 
-                        intensity:0.7; 
-                        decay: 2;" position="0 0 0"></a-entity>
-      <!-- Es gibt verschiedene Arten von Lichtern (type). Diese können Schatten werfen (castShadow). Die Intensität kann auch verändert werden (intensity). Die Stärke des Abklingens kann auch verändert werden (decay).-->
-    </a-box>
+  <a-scene game shadow="basic" background="color: black" stats>
+    <a-animation attribute="background.color" begin="start" dur="30000" from="lightblue" to="black" repeat="indefinite" direction="alternate"></a-animation>
 
-
-    <a-sphere position="0 30 -13" height="0.2" color="yellow" shadow="cast: false; receive: false">
-
-
-      <!-- Hier wird eine Box erstellt. Sie verkörpert die nachfolgend erstellten Lichter.-->
-      <a-entity id="sun" light="type: directional;
-                          castShadow: true; 
-                          intensity:0.5; 
-                          decay: 2;
-                          color: orange;" 
-                          position="-1 20 0">
-        <a-animation attribute="light.intensity" begin="0.5" dur="30000" to="0" repeat="indefinite" direction="alternate"></a-animation>
-        <a-entity light="type: ambient; 
-        intensity:0.5; 
-        decay: 2;" position="0 0 0">
-          <a-animation attribute="light.intensity" begin="0.5" dur="30000" to="0.1" repeat="indefinite" direction="alternate"></a-animation>
-        </a-entity>
-
-      </a-entity>
-    </a-sphere>
     <a-assets>
       <!-- Hier werden die Assets (Objekte, Bilder, Sounds, etc.) geladen mit denen wir arbeiten möchten.-->
       <a-asset-item id="room_dae" src="assets/room.dae"></a-asset-item>
@@ -67,26 +41,38 @@
       <a-asset-item id="granny_head_dae" src="assets/granny_head.dae"></a-asset-item>
       <a-asset-item id="tulip_obj" src="assets/tulip.obj"></a-asset-item>
       <a-asset-item id="tulip_mtl" src="assets/tulip.mtl"></a-asset-item>
-
     </a-assets>
 
+<<<<<<< HEAD
     <a-entity camera="userHeight:0" position="-0.1 0 1" rotation="0 0 0" id="kamera1" look-controls>
       <!-- Hier wird dei Kamera/Sicht des Nutzers erstellt -->
+=======
+    <a-entity camera="userHeight:0" position="-0.1 0 1" rotation="0 0 0" id="kamera1" look-controls wasd-controls>
+>>>>>>> e3f07b640214ee2542a56ea9ce339364f2a2965f
       <a-cursor fuse="true" fuseTimeout="1500" raycaster="objects:.clickable" position="0 0 -0.5" geometry="primitive: circle; radius: 0.1"
-        material="color: black; shader: flat; transparent: true; opacity: 0.8" scale="0.1 0.1 0.1">
-        <!-- Hier wird der Cursor mit seinen Animationen definiert -->
+        material="color: white; shader: flat; transparent: true; opacity: 0.8" scale="0.1 0.1 0.1">
         <a-animation begin="fusing" easing="ease-out" attribute="scale" dur="100" fill="forwards" from="0.1 0.1 0.1" to="0.13 0.13 0.13"></a-animation>
-        <a-animation begin="fusing" easing="ease-in" attribute="material.color" dur="50" fill="forwards" from="black" to="white"></a-animation>
         <a-animation begin="fusing" easing="ease-in" attribute="scale" dur="1000" delay="100" fill="forwards" from="0.13 0.13 0.13"
           to="0.04 0.04 0.04"></a-animation>
-        <a-animation begin="click" easing="ease-in" attribute="material.color" dur="200" fill="forwards" from="white" to="black"></a-animation>
         <a-animation begin="click" attribute="scale" dur="300" fill="forwards" easing="ease-in" from="0.04 0.04 0.04" to="0.1 0.1 0.1"></a-animation>
       </a-cursor>
     </a-entity>
 
-    <!-- Hier werden die verschiedenen collada Objekte mit Hilfe der geladenen Assets erstellt -->
+    <a-light id="roomlamp" type="point" position="0 0 0" intensity="0.06"></a-light>
+    <a-plane button="value: 1" position="-1.5 0 -0.85" width="1" height="0.5" color="grey" shader="flat" rotation="0 20 0"></a-plane>
+    <a-plane button="value: 2" position="0 0 -1" width="1" height="0.5" color="grey" shader="flat" rotation="0 0 0" class="clickable"></a-plane>
+    <a-plane button="value: 4" position="1.5 0 -0.85" width="1" height="0.5" color="grey" shader="flat" rotation="0 -20 0"></a-plane>
 
-    <a-collada-model id="granny_body" src="#granny_body_dae" position="-1 -0.6 0" rotation="0 45 0" scale="0.13 0.13 0.13" shadow="cast: true; receive: true;">
+
+
+
+
+
+
+
+
+    <a-collada-model id="granny" src="#granny_body_dae" position="-1 -0.6 0" rotation="0 45 0" scale="0.13 0.13 0.13" shadow="cast: true; receive: true;"
+      visible="false">
       <a-collada-model id="granny_head" src="#granny_head_dae" position="0 1 0" scale="1 1 1" shadow="cast: true; receive: true;">
 
       </a-collada-model>
@@ -100,7 +86,8 @@
 
 
 
-    <a-collada-model handy id="handy" src="#handy_dae" position="0 -0.6 0" rotation="0 90 0" shadow="cast: false; receive: false;">
+    <a-collada-model handy id="handy" src="#handy_dae" position="0 -0.6 0" rotation="0 90 0" shadow="cast: false; receive: false;"
+      visible="false">
       <a-text id="uhr" value="12:30" rotation="-90 0 0" align="center" color="white" position="0.495 -0.3972 -0.5" wrap-count="150">
         <a-entity line="start: -0.12 -0.2 0.01; end: 0.12 -0.2 0.01; color: red"></a-entity>
       </a-text>
@@ -111,27 +98,26 @@
     <a-collada-model id="raum" src="#room_dae" position="0 0 0" rotation="0 0 0" shadow="cast: true; receive: true;"></a-collada-model>
 
     <a-collada-model id="schrank" src="#schrank_dae" shadow="cast: true; receive: true;">
-      <a-collada-model interactive="event: bookfound;" id="buch" src="#buch_dae" position="3.3 0 2.4" rotation="0 0 0"
-        shadow="cast: true; receive: true;">
+      <a-collada-model interactive id="buch" src="#buch_dae" position="3.3 0 2.4" rotation="0 0 0" shadow="cast: true; receive: true;">
         <a-animation attribute="position" begin="bookfound" dur="5000" to="3.3 0 1"></a-animation>
         <a-animation attribute="rotation" begin="bookfound" dur="4000" to="0 270 0"></a-animation>
-        <a-animation attribute="position" begin="bookfound" delay="7000"dur="5000" from="3.3 0 1" to="3.3 0 2.4"></a-animation>
+        <a-animation attribute="position" begin="bookfound" delay="7000" dur="5000" from="3.3 0 1" to="3.3 0 2.4"></a-animation>
         <a-animation attribute="rotation" begin="bookfound" delay="7000" dur="4000" from="0 270 0" to="0 0 0"></a-animation>
       </a-collada-model>
     </a-collada-model>
 
-    <a-collada-model interactive="event:found;" id="brille" src="#brille_dae" position="-3, -0.85, 1" shadow="cast: true; receive: true">
+    <a-collada-model interactive="event: animate;" id="brille" src="#brille_dae" position="-3, -0.85, 1" shadow="cast: true; receive: true">
       <a-animation attribute="position" begin="found" dur="5000" to="0 0 0"></a-animation>
     </a-collada-model>
 
 
-    <a-collada-model id="plattenspieler" src="#plattenspieler_dae" position="0 0 2.4" rotation="0 0 0"
-      shadow="cast: true; receive: true;">
-      <a-collada-model interactive="event: play" id="platte" src="#platte_dae" shadow="cast: false; receive: false;">
+
+    <a-collada-model id="plattenspieler" src="#plattenspieler_dae" position="0 0 2.4" rotation="0 0 0" shadow="cast: true; receive: true;">
+      <a-collada-model interactive id="platte" src="#platte_dae" shadow="cast: false; receive: false;">
         <a-animation attribute="rotation" begin="play" dur="30000" to="0 1300 0"></a-animation>
       </a-collada-model>
     </a-collada-model>
-    </a-collada-model>
+
 
 
 
