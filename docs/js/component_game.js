@@ -29,6 +29,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         var ambientlight = document.getElementById("ambientlight");
         var roomlamp = document.getElementById("roomlamp");
         var sun = document.getElementById("sun");
+        var next = document.getElementById('next');
 
 
         if (this.data.state == 'start') {
