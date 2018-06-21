@@ -9,7 +9,7 @@ AFRAME.registerComponent('button', {
     init: function () {
         textelement = document.createElement('a-text');
         this.el.appendChild(textelement);
-        if(this.el.id == 'endgame'){
+        if(this.el.id == 'endgame' || this.el.id == 'continue'){
         textelement.setAttribute('value', this.data.value);
         }
         else{

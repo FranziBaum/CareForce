@@ -9,8 +9,11 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         firstChallengeTime: { type: 'int', default: 10000 },
         caretime: { type: 'int', default: 20 },
 
+<<<<<<< HEAD
         
     
+=======
+>>>>>>> 06d92d1cf1eaecebaf9a8af8dd8f8267d02ebab4
         state: { type: 'string', default: 'play' },
 
         challenges: { type: 'array' }
@@ -29,7 +32,19 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         var end= document.getElementById("endgame");
         var choose= document.getElementById("bye");
         var message= document.getElementById("elixir");
+        var scene = document.getElementById("scene");
+        var ambientlight = document.getElementById("ambientlight");
+        var roomlamp = document.getElementById("roomlamp");
+        var sun = document.getElementById("sun");
+        var next = document.getElementById('next');
+
+
         if (this.data.state == 'start') {
+            ambientlight.setAttribute('intensity',0);
+            roomlamp.setAttribute('intensity',0);
+            sun.setAttribute('intensity',0);
+
+
 
             for(var i = 0; i < buttons.length; i++){
                 buttons.item(i).setAttribute("visible", false);
@@ -41,6 +56,8 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
                end.setAttribute("visible",false);
             
             message.setAttribute("visible", false);
+
+            next.setAttribute("visible",false);
         }
 
         
@@ -57,10 +74,12 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
            end.setAttribute("visible",false);
 
            message.setAttribute("visible", false);
+
+           next.setAttribute("visible",true);
         }
         else if (this.data.state == 'play') {
- 
-
+            
+            scene.setAttribute('background','color','lightblue');
 
             granny.setAttribute('visible', true);
             handy.setAttribute('visible', true);
@@ -70,6 +89,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
             end.setAttribute("visible",false);
             choose.setAttribute("visible", false);
             message.setAttribute("visible", false);
+            next.setAttribute("visible",false);
 
             for(var i = 0; i < buttons.length; i++){
                 buttons.item(i).setAttribute("visible", false);
@@ -88,6 +108,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
             choose.setAttribute("visibel", true);
             headline.setAttribute("visible", false);
             message.setAttribute("visible", false);
+            next.setAttribute("visible",true);
 
         }
         else if (this.data.state == 'outro') {
@@ -102,6 +123,8 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
                end.setAttribute("visible",false);
             
             message.setAttribute("visible", true);
+
+            next.setAttribute("visible",false);
         }
     },
     tick: function () {
