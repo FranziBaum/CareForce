@@ -19,7 +19,6 @@
   <script src="js/component_button.js"></script>
 
 </head>
-
 <body>
 
   <!-- Da es sich um ein HTML Dokument handelt gibt es einen body-tag für den Inhalt -->
@@ -60,7 +59,12 @@
     <a-text id="poem" value="Wie viel Zeit kannst du aufbringen?" color="white" width="1.5" position="-0.6 0.3 0" ></a-text>
     <a-text id="bye" value="Was willst du tun?" color="white" width="1.5" position="-0.35 0.3 0" ></a-text>
    
-    <a-light id="roomlamp" type="point" position="0 0 0" intensity="0.06"></a-light>
+    <a-light id="roomlamp" type="point" position="0 0 0" intensity="0.06" shadow="cast:true"></a-light>
+    <a-light id="ambientlight" type="ambient" position="0 0 0" intensity="0.3"></a-light>
+    <a-light id="sun" type="directional" position="0 50 0" intensity="1" shadow="cast:true" angle="45"></a-light>
+
+
+
     <a-plane class="pick" button="value: 1" position="-1.5 0 -0.85" width="1" height="0.5" color="grey" shader="flat" rotation="0 20 0"></a-plane>
     <a-plane class="pick" button="value: 2" position="0 0 -1" width="1" height="0.5" color="grey" shader="flat" rotation="0 0 0" class="clickable"></a-plane>
     <a-plane class="pick" button="value: 4" position="1.5 0 -0.85" width="1" height="0.5" color="grey" shader="flat" rotation="0 -20 0"></a-plane>
