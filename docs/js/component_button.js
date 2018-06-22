@@ -32,7 +32,7 @@ AFRAME.registerComponent('button', {
                 buttons.item(i).setAttribute('color', 'grey');
         }
             if(this.id == 'endgame'){
-                scene.setAttribute('game','state','end');
+                scene.setAttribute('game','state','outro');
             }
             else if(this.id == 'continue'){
                 scene.setAttribute('game','state','play');
