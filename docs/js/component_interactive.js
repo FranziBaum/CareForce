@@ -8,20 +8,21 @@ AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Name
         activeTime: { type: 'int', default: 8000 },
         message: { type: 'string', default: '' },
         influence: { type: 'int', default: 20 },
-        startTime: {type: 'int'},
-        foundTime: {type: 'int'}
+        startTime: { type: 'int' },
+        foundTime: { type: 'int' }
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
 
         this.el.addEventListener('click', function () {
-            if (this.isActive == true) {
+            
+            if (this.components.interactive.data.isActive == true) {
                 console.log("clicked");
-                this.el.emit('animate');
+                this.emit('animate');
                 var heart = document.querySelector('#heart');
                 var heartvalue = heart.getAttribute('feedback').value;
-                heart.setAttribute('feedback', 'value', heartvalue + data.influence);
-                data.isActive = false;
-                el.classList.remove("clickable");
+                heart.setAttribute('feedback', 'value', heartvalue + this.components.interactive.data.influence);
+                this.setAttribute('isActive',false);
+                this.classList.remove("clickable");
             }
         });
 
@@ -30,24 +31,25 @@ AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Name
         if (this.data.isActive == true) {
             this.el.classList.add("clickable");
             this.data.startTime = Date.now();
+
         }
-        else if(this.data.isActive == false) {
+        else if (this.data.isActive == false) {
             this.el.classList.remove("clickable");
         }
 
     },
     tick: function () {
-        if(this.isActive == true){
-        var currenttime = Date.now();
-        console.log("aktiv");
-     if(currenttime > this.data.startTime + this.data.activeTime){
-         console.log("abgelaufen");
-     }
-    }
+        if (this.isActive == true) {
+            var currenttime = Date.now();
+            console.log("aktiv");
+            if (currenttime > this.data.startTime + this.data.activeTime) {
+                console.log("abgelaufen");
+            }
+        }
 
-        
 
-    
+
+
 
     },
 });
