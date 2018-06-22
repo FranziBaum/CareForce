@@ -27,6 +27,7 @@ AFRAME.registerComponent('button', {
         console.log(buttons);
 
         this.el.addEventListener('click', function () {
+            console.log(this.id);
 
             for (var i = 0; i < buttons.length; i++) {
                 buttons.item(i).setAttribute('color', 'grey');

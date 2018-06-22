@@ -8,7 +8,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         currentTime: { type: 'int', default: 0 },
         firstChallengeTime: { type: 'int', default: 10000 },
         caretime: { type: 'int'},
-        state: { type: 'string', default: 'start' },
+        state: { type: 'string', default: 'decide' },
         challenges: { type: 'array' }
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
@@ -42,6 +42,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         
         else if (this.data.state == 'intro') {
             startsound.play();
+
             for(var i = 0; i < buttons.length; i++){
             buttons.item(i).setAttribute("visible", true);
         }
@@ -55,7 +56,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
 
            next.setAttribute("visible",true);
         }
-        else if (this.data.state == 'intro') {
+        else if (this.data.state == 'play') {
             startsound.pause();
             
             scene.setAttribute('background','color','lightblue');
