@@ -13,10 +13,10 @@
   <script src="js/aframe.min.js"></script>
   <!-- A-Frame Framework -->
   <script src="js/component_interactive.js"></script>
+  <script src="js/component_button.js"></script>
   <script src="js/component_game.js"></script>
   <script src="js/component_feedback.js"></script>
   <script src="js/component_handy.js"></script>
-  <script src="js/component_button.js"></script>
 
 </head>
 
@@ -44,9 +44,8 @@
       <a-asset-item id="tulip_mtl" src="assets/tulip.mtl"></a-asset-item>
     </a-assets>
 
-    <a-entity camera="userHeight:0" position="-0.1 0 1" rotation="0 0 0" id="kamera1" look-controls>
       <!-- Hier wird dei Kamera/Sicht des Nutzers erstellt -->
-    <a-entity camera="userHeight:0" position="-0.1 0 1" rotation="0 0 0" id="kamera1" look-controls wasd-controls>
+    <a-camera position="-0.1 0.15 1" rotation="0 0 0" id="kamera1" look-controls wasd-controls>
       <a-cursor fuse="true" fuseTimeout="1500" raycaster="objects:.clickable" position="0 0 -0.5" geometry="primitive: circle; radius: 0.1"
         material="color: white; shader: flat; transparent: true; opacity: 0.8" scale="0.1 0.1 0.1">
         <a-animation begin="fusing" easing="ease-out" attribute="scale" dur="100" fill="forwards" from="0.1 0.1 0.1" to="0.13 0.13 0.13"></a-animation>
@@ -54,28 +53,30 @@
           to="0.04 0.04 0.04"></a-animation>
         <a-animation begin="click" attribute="scale" dur="300" fill="forwards" easing="ease-in" from="0.04 0.04 0.04" to="0.1 0.1 0.1"></a-animation>
       </a-cursor>
-    </a-entity>
+    </a-camera>
+    <a-sound id="startsound" src="src: url(sounds/storm.mp3)" autoplay="false" on="play" position="0 2 5"></a-sound>
 
 
-    <a-text id="poem" value="Wie viel Zeit kannst du aufbringen?" color="white" width="1.5" position="-0.6 0.3 0" ></a-text>
-    <a-text id="bye" value="Was willst du tun?" color="white" width="1.5" position="-0.35 0.3 0" ></a-text>
+
+    <a-text id="poem" value="Wie viel Zeit kannst du aufbringen?" color="white" width="1.5" position="-0.6 0.3 0" visible="false" ></a-text>
+    <a-text id="bye" value="Was willst du tun?" color="white" width="1.5" position="-0.35 0.3 0" visible="false"></a-text>
 
     <a-text id="elixir" value=",,Jeder Mensch sehnt sich nach Zuneigung und Liebe, bei Menschen mit Pflegebedarf ist das nicht anders. Das Beste was du tun kannst, ist ihnen deine Zeit zu schenken und ihnen zu zeigen, dass du da bist und sie dir wichtig sind. Geborgenheit und Liebe kann nicht gekauft oder hergestellt werden, man muss es durch seine Taten zeigen. Du hast es in der Hand, jemanden zu helfen.”
-    "color="white" width="2" position="-1 0.1 0" ></a-text>
+    "color="white" width="2" position="-1 0.1 0" visible="false"></a-text>
    
     <a-light id="roomlamp" type="point" position="0 0 0" intensity="0.06" shadow="cast:true"></a-light>
-    <a-light id="ambientlight" type="ambient" position="0 0 0" intensity="0.3"></a-light>
-    <a-light id="sun" type="directional" position="0 50 0" intensity="1" shadow="cast:true" angle="45"></a-light>
+    <a-light id="ambientlight" type="ambient" position="0 0 0" intensity="0"></a-light>
+    <a-light id="sun" type="directional" position="0 50 0" intensity="0" shadow="cast:true" angle="45"></a-light>
 
 
 
 
     <a-light id="roomlamp" type="point" position="0 0 0" intensity="0.06"></a-light>
-    <a-plane class="pick" button="value: 1" position="-1.5 0 -0.85" width="1" height="0.5" color="grey" shader="flat" rotation="0 20 0"></a-plane>
-    <a-plane class="pick" button="value: 2" position="0 0 -1" width="1" height="0.5" color="grey" shader="flat" rotation="0 0 0" class="clickable"></a-plane>
-    <a-plane class="pick" button="value: 4" position="1.5 0 -0.85" width="1" height="0.5" color="grey" shader="flat" rotation="0 -20 0"></a-plane>
-    <a-plane id="endgame" button="value: End Game" position="-1.5 -1 -1" width="1" height="0.5" color="grey" shader="flat" rotation="0 0 0"></a-plane>
-    <a-plane id="continue" button="value: Fortsetzen" position="0 -1 -1" width="1" height="0.5" color="grey" shader="flat" rotation="0 0 0"></a-plane>
+    <a-plane class="pick" button="value: 1" position="-1.5 0 -0.85" width="1" height="0.5" color="grey" shader="flat" rotation="0 20 0" visible="false"></a-plane>
+    <a-plane class="pick" button="value: 2" position="0 0 -1" width="1" height="0.5" color="grey" shader="flat" rotation="0 0 0" class="clickable" visible="false"></a-plane>
+    <a-plane class="pick" button="value: 4" position="1.5 0 -0.85" width="1" height="0.5" color="grey" shader="flat" rotation="0 -20 0" visible="false"></a-plane>
+    <a-plane id="endgame" button="value: End Game" position="-1.5 -1 -1" width="1" height="0.5" color="grey" shader="flat" rotation="0 0 0" visible="false"></a-plane>
+    <a-plane id="continue" button="value: Fortsetzen" position="0 -1 -1" width="1" height="0.5" color="grey" shader="flat" rotation="0 0 0" visible="false"></a-plane>
 
 
 

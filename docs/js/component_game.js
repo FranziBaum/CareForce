@@ -7,8 +7,8 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         startTime: { type: 'int', default: 0 },
         currentTime: { type: 'int', default: 0 },
         firstChallengeTime: { type: 'int', default: 10000 },
-        caretime: { type: 'int', default: 20 },
-        state: { type: 'string', default: 'decide' },
+        caretime: { type: 'int'},
+        state: { type: 'string', default: 'intro' },
         challenges: { type: 'array' }
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
@@ -30,31 +30,20 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         var roomlamp = document.getElementById("roomlamp");
         var sun = document.getElementById("sun");
         var next = document.getElementById('continue');
+        var startsound = document.getElementById('startsound');
 
         if (this.data.state == 'start') {
-            ambientlight.setAttribute('intensity',0);
-            roomlamp.setAttribute('intensity',0);
-            sun.setAttribute('intensity',0);
+   
 
-            for(var i = 0; i < buttons.length; i++){
-                buttons.item(i).setAttribute("visible", false);
-            }
-               headline.setAttribute("visible", false);
-    
-               choose.setAttribute("visible", false);
-    
-               end.setAttribute("visible",false);
-            
-            message.setAttribute("visible", false);
 
-            next.setAttribute("visible",false);
+
         }
 
         
         else if (this.data.state == 'intro') {
+            startsound.play();
 
-
-           for(var i = 0; i < buttons.length; i++){
+            for(var i = 0; i < buttons.length; i++){
             buttons.item(i).setAttribute("visible", true);
         }
            headline.setAttribute("visible", true);
@@ -68,12 +57,16 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
            next.setAttribute("visible",true);
         }
         else if (this.data.state == 'play') {
+            startsound.pause();
             
             scene.setAttribute('background','color','lightblue');
 
             granny.setAttribute('visible', true);
             handy.setAttribute('visible', true);
             roomlamp.setAttribute('intensity', 0.7);
+            ambientlight.setAttribute('intensity',0.3);
+            sun.setAttribute('intensity',0.5);
+
 
             headline.setAttribute("visible", false);
             end.setAttribute("visible",false);
