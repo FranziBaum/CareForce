@@ -8,15 +8,19 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         currentTime: { type: 'int', default: 0 },
         firstChallengeTime: { type: 'int', default: 10000 },
         caretime: { type: 'int'},
-        state: { type: 'string', default: 'decide' },
+        state: { type: 'string', default: 'intro' },
         challenges: { type: 'array' }
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
-        this.data.startTime = Date.now();
         var challenges = document.querySelectorAll('a-collada-model[interactive]');
         this.data.challenges = Array.from(challenges);
+        console.log(this.data.challenges);
     },
     update: function () {
+        var challenges = document.querySelectorAll('a-collada-model[interactive]');
+        this.data.challenges = Array.from(challenges);
+        console.log(this.data.challenges);
+
         var granny = document.getElementById('granny');
         var handy = document.getElementById('handy');
         var roomlamp = document.getElementById('roomlamp');
@@ -57,6 +61,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
            next.setAttribute("visible",true);
         }
         else if (this.data.state == 'play') {
+            this.data.startTime = Date.now();
             startsound.pause();
             
             scene.setAttribute('background','color','lightblue');
@@ -111,16 +116,23 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         }
     },
     tick: function () {
+
         if(this.data.state == 'play'){
         this.data.currentTime = Date.now() - this.data.startTime;
         if (this.data.currentTime >= this.data.firstChallengeTime && this.data.challenges.length > 0) {
-            this.data.startTime = Date.now();
+            console.log("jetzt wird ein objekt aktiviert");
+
             var randomNumber = Math.floor(Math.random() * this.data.challenges.length);
             var randomChallenge = this.data.challenges[randomNumber];
+
             randomChallenge.setAttribute('interactive', 'isActive', true);
+            console.log(randomChallenge.getAttribute('interactive').isActive);
             this.data.challenges.splice(randomNumber, 1);
             console.log(randomChallenge.id + ' ist aktiv');
             document.querySelector('#handytext').setAttribute('value', randomChallenge.id);
+    
+    
+           this.data.startTime = Date.now();
         }
 
     }

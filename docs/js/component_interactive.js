@@ -12,14 +12,11 @@ AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Name
         foundTime: {type: 'int'}
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
-        var data = this.data; //data bezieht sich auf schema 
-        var el = this.el; // el spricht dieses Element an 
-        var scene = document.querySelector('a-scene');
 
-        el.addEventListener('click', function () {
-            console.log("jetzt ist active: "+ data.isActive);
-            if (data.isActive) {
-                el.emit('animate');
+        this.el.addEventListener('click', function () {
+            if (this.isActive == true) {
+                console.log("clicked");
+                this.el.emit('animate');
                 var heart = document.querySelector('#heart');
                 var heartvalue = heart.getAttribute('feedback').value;
                 heart.setAttribute('feedback', 'value', heartvalue + data.influence);
@@ -36,23 +33,21 @@ AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Name
         }
         else if(this.data.isActive == false) {
             this.el.classList.remove("clickable");
-
-
-
         }
 
     },
     tick: function () {
-        if (this.data.isActive) {
-            var currentTime = Date.now();
-            var time = currentTime - this.data.startTime;
-            if(time >= this.data.activeTime){
-                this.data.isActive = false;
-                this.el.classList.remove("clickable");
-                console.log('abgelaufen');
-            }
-            
-        }
+        if(this.isActive == true){
+        var currenttime = Date.now();
+        console.log("aktiv");
+     if(currenttime > this.data.startTime + this.data.activeTime){
+         console.log("abgelaufen");
+     }
+    }
+
+        
+
+    
 
     },
 });
