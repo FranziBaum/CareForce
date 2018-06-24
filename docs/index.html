@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <!-- A-Frame wird, wie auch p5, in einer HTML Seite eingebunden -->
-<html class="grey0">
+<html>
+  <div id="greywrap">
+    <div id="blurwrap">
 
 <head>
   <!-- im Head werden Angaben zum Titel und zu Metadaten gemacht-->
@@ -110,7 +112,7 @@
     <a-collada-model id="raum" src="#room_dae" position="0 0 0" rotation="0 0 0" shadow="cast: true; receive: true;"></a-collada-model>
 
     <a-collada-model id="schrank" src="#schrank_dae" shadow="cast: true; receive: true;">
-      <a-collada-model interactive id="buch" src="#buch_dae" position="3.3 0 2.4" rotation="0 0 0" shadow="cast: true; receive: true;">
+      <a-collada-model interactive="influence: 40" id="buch" src="#buch_dae" position="3.3 0 2.4" rotation="0 0 0" shadow="cast: true; receive: true;">
         <a-animation attribute="position" begin="animate" dur="5000" to="3.3 0 1"></a-animation>
         <a-animation attribute="rotation" begin="animate" dur="4000" to="0 270 0"></a-animation>
         <a-animation attribute="position" begin="animate" delay="7000" dur="5000" from="3.3 0 1" to="3.3 0 2.4"></a-animation>
@@ -118,14 +120,14 @@
       </a-collada-model>
     </a-collada-model>
 
-    <a-collada-model interactive id="brille" src="#brille_dae" position="-3, -0.85, 1" shadow="cast: true; receive: true">
+    <a-collada-model interactive="influence: 60" id="brille" src="#brille_dae" position="-3, -0.85, 1" shadow="cast: true; receive: true">
       <a-animation attribute="position" begin="animate" dur="5000" to="0 0 0"></a-animation>
     </a-collada-model>
 
 
 
     <a-collada-model id="plattenspieler" src="#plattenspieler_dae" position="0 0 2.4" rotation="0 0 0" shadow="cast: true; receive: true;">
-      <a-collada-model interactive id="platte" src="#platte_dae" shadow="cast: false; receive: false;">
+      <a-collada-model interactive="influence: 40" id="platte" src="#platte_dae" shadow="cast: false; receive: false;">
         <a-animation attribute="rotation" begin="animate" dur="30000" to="0 1300 0"></a-animation>
       </a-collada-model>
     </a-collada-model>
@@ -135,5 +137,7 @@
 
   </a-scene>
 </body>
+</div>
+</div>
 
 </html>

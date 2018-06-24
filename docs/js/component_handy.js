@@ -17,6 +17,9 @@ AFRAME.registerComponent('handy', { //Hier wird ein Component mit dem Namen "int
        
       },
     tick: function () { //Die "tick"-Funktion wird andauernd aufgerufen. (siehe draw() Funktion in p5)
+    var game = document.getElementById('scene');
+
+    if(game.getAttribute('game').state == 'play'){
     var el= this.el;
     var min = this.el.getAttribute('handy').min;
     var hour = this.el.getAttribute('handy').hour;
@@ -28,17 +31,18 @@ AFRAME.registerComponent('handy', { //Hier wird ein Component mit dem Namen "int
     var camera_positionz = document.querySelector('#kamera1').getAttribute('position').z;
     el.setAttribute('rotation',camera_rotx*-1+" "+camera_roty+" 20");
     el.setAttribute('position',(camera_positionx)+" "+(camera_positiony-0.8)+" "+camera_positionz);
-    this.el.setAttribute('handy','min',(min+1/35));
+    this.el.setAttribute('handy','min',(min+1/5));
     if(min >= 59){
         this.el.setAttribute('handy','hour',hour+1);
         this.el.setAttribute('handy','min',0);
     }
-    if(this.data.min >= 10){
+    if(Math.round(this.data.min) > 9){
     uhr.setAttribute('value',this.data.hour+":"+Math.round(this.data.min));
     }
     else{
     uhr.setAttribute('value',this.data.hour+":0"+Math.round(this.data.min));
     }
+}
 
     }
 });

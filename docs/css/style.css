@@ -1,29 +1,33 @@
+html{
+    background:black;
+}
+
 .grey0 {
-    -webkit-filter: grayscale(0%); 
-    filter: grayscale(0%);
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
 
 }
 
 .grey10 {
-    -webkit-filter: grayscale(10%); 
-    filter: grayscale(10%);
+    -webkit-filter: grayscale(90%); 
+    filter: grayscale(90%);
 
 }
 
 .grey20 {
-    -webkit-filter: grayscale(20%); 
-    filter: grayscale(20%);
+    -webkit-filter: grayscale(80%); 
+    filter: grayscale(80%);
 }
 
 .grey30 {
-    -webkit-filter: grayscale(30%); 
-    filter: grayscale(30%);
+    -webkit-filter: grayscale(70%); 
+    filter: grayscale(70%);
 
 }
 
 .grey40 {
-    -webkit-filter: grayscale(40%); 
-    filter: grayscale(40%);
+    -webkit-filter: grayscale(60%); 
+    filter: grayscale(60%);
 }
 
 .grey50 {
@@ -33,31 +37,43 @@
 }
 
 .grey60 {
-    -webkit-filter: grayscale(60%); 
-    filter: grayscale(60%);
+    -webkit-filter: grayscale(40%); 
+    filter: grayscale(40%);
 }
 
 .grey70 {
-    -webkit-filter: grayscale(70%); 
-    filter: grayscale(70%);
+    -webkit-filter: grayscale(30%); 
+    filter: grayscale(30%);
 
 }
 
 .grey80 {
-    -webkit-filter: grayscale(80%); 
-    filter: grayscale(80%);
+    -webkit-filter: grayscale(20%); 
+    filter: grayscale(20%);
 }
 
 .grey90 {
-    -webkit-filter: grayscale(80%); 
-    filter: grayscale(80%);
+    -webkit-filter: grayscale(10%); 
+    filter: grayscale(10%);
 }
 
 .grey100 {
-    -webkit-filter: grayscale(80%); 
-    filter: grayscale(80%);
+    -webkit-filter: grayscale(0%); 
+    filter: grayscale(0%);
 }
 
-.blur5 {
+.blur0 {
+    filter:blur(0px);
+}
+.blur1 {
+    filter:blur(0px);
+}
+.blur2 {
+    filter:blur(1px);
+}
+.blur3 {
+    filter:blur(3px);
+}
+.blur4 {
     filter:blur(5px);
 }

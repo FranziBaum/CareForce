@@ -24,10 +24,8 @@ AFRAME.registerComponent('button', {
         var sceneEl = document.querySelector('a-scene');
 
         var buttons = sceneEl.querySelectorAll('a-plane');
-        console.log(buttons);
 
         this.el.addEventListener('click', function () {
-            console.log(this.id);
 
             for (var i = 0; i < buttons.length; i++) {
                 buttons.item(i).setAttribute('color', 'grey');
@@ -37,14 +35,16 @@ AFRAME.registerComponent('button', {
             }
             else if(this.id == 'continue'){
                 scene.setAttribute('game','state','play');
+                currentday = scene.getAttribute('game').day;
+                scene.setAttribute('game','day',currentday+1);
+                console.log(scene.getAttribute('game').day);
+
             }
-            else{
+            else if(this.classList.contains('pick')){
                 var value = this.getAttribute('button').value;
-                scene.setAttribute('caretime',value);
-                console.log(value);
+                scene.setAttribute('game','caretime',value);
             }
             this.setAttribute('color', 'red');
-            console.log(this.getAttribute('material').visible);
     
         });
 
