@@ -4,17 +4,15 @@
 AFRAME.registerComponent('button', {
     schema: {
         value: { type: 'string', default: '' }
-
     },
     init: function () {
         textelement = document.createElement('a-text');
         this.el.appendChild(textelement);
-        if(this.el.id == 'endgame' || this.el.id == 'continue'){
+        if(this.el.id == 'endgame' || this.el.id == 'continue' || this.el.id == 'start'){
         textelement.setAttribute('value', this.data.value);
         }
         else{
             textelement.setAttribute('value', this.data.value + " h");
-
         }
         textelement.setAttribute('color', "black");
         textelement.setAttribute('align', "center");
@@ -24,20 +22,19 @@ AFRAME.registerComponent('button', {
         var sceneEl = document.querySelector('a-scene');
 
         var buttons = sceneEl.querySelectorAll('a-plane');
-
         this.el.addEventListener('click', function () {
-
             for (var i = 0; i < buttons.length; i++) {
                 buttons.item(i).setAttribute('color', 'grey');
         }
             if(this.id == 'endgame'){
-                scene.setAttribute('game','state','outro');
+                sceneEl.components.game.startOutro();
             }
             else if(this.id == 'continue'){
-                scene.setAttribute('game','state','play');
-                currentday = scene.getAttribute('game').day;
-                scene.setAttribute('game','day',currentday+1);
-                console.log(scene.getAttribute('game').day);
+                sceneEl.components.game.startDay();
+            }
+            else if(this.id == 'start'){
+                sceneEl.components.game.startIntro();
+                this.setAttribute("visible", false);
 
             }
                 
