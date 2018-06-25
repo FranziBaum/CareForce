@@ -40,6 +40,8 @@ AFRAME.registerComponent('button', {
                 console.log(scene.getAttribute('game').day);
 
             }
+                
+
             else if(this.classList.contains('pick')){
                 var value = this.getAttribute('button').value;
                 scene.setAttribute('game','caretime',value);

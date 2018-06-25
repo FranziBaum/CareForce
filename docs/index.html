@@ -40,14 +40,11 @@
       <a-asset-item id="plattenspieler_dae" src="assets/plattenspieler.dae"></a-asset-item>
       <a-asset-item id="platte_dae" src="assets/platte.dae"></a-asset-item>
       <a-asset-item id="granny_dae" src="assets/granny.dae"></a-asset-item>
-
-
-      <a-asset-item id="tulip_obj" src="assets/tulip.obj"></a-asset-item>
-      <a-asset-item id="tulip_mtl" src="assets/tulip.mtl"></a-asset-item>
+      <a-asset-item id="tulip100_dae" src="assets/tulip0.dae"></a-asset-item>
     </a-assets>
 
       <!-- Hier wird dei Kamera/Sicht des Nutzers erstellt -->
-    <a-camera position="-0.1 0.15 1" rotation="0 0 0" id="kamera1" look-controls wasd-controls>
+    <a-camera position="-0.1 0.2 1" rotation="0 0 0" id="kamera1" look-controls wasd-controls>
       <a-cursor fuse="true" fuseTimeout="1500" raycaster="objects:.clickable" position="0 0 -0.5" geometry="primitive: circle; radius: 0.1"
         material="color: white; shader: flat; transparent: true; opacity: 0.8" scale="0.1 0.1 0.1">
         <a-animation begin="fusing" easing="ease-out" attribute="scale" dur="100" fill="forwards" from="0.1 0.1 0.1" to="0.13 0.13 0.13"></a-animation>
@@ -95,7 +92,7 @@
       </a-collada-model>
 
 
-    <a-obj-model id="tulip" src="#tulip_obj" mtl="#tulip_mtl" position="-2 -0.5 0.5" scale="0.01 0.01 0.01" shadow="cast: true; receive: true;"></a-obj-model>
+    <a-collada-model id="tulip" src="#tulip100_dae" position="3.5 -0.66 -1.8" scale="1.5 1.5 1.5" shadow="cast: true; receive: true;"></a-collada-model>
 
 
 

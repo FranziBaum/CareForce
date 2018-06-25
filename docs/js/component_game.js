@@ -103,6 +103,12 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
             console.log("enter decide");
 
             this.data.startTime = Date.now();
+            this.data.activatedChallenges = 0;
+            var challenges = document.querySelectorAll('a-collada-model[interactive]');
+            this.data.challenges = Array.from(challenges);
+            console.log(challenges);
+                for (var i = 0; i < challenges.length; i++) {
+                    challenges.item(i).setAttribute('isActive', false);
 
 
             for (var i = 0; i < buttons.length; i++) {
@@ -119,6 +125,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
 
 
         }
+    }
         else if (this.data.state == 'outro') {
             console.log("enter outro");
 
@@ -168,7 +175,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
                     blurElement.classList.add('blur'+this.data.activatedChallenges);
             
                 }
-                if(this.data.activatedChallenges == this.data.caretime){
+                if(this.data.activatedChallenges == this.data.caretime && this.data.currentTime >= this.data.firstChallengeTime){
                     this.el.setAttribute('game','state','decide');;
                 }
         }

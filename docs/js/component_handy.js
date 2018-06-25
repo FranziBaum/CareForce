@@ -31,7 +31,7 @@ AFRAME.registerComponent('handy', { //Hier wird ein Component mit dem Namen "int
     var camera_positionz = document.querySelector('#kamera1').getAttribute('position').z;
     el.setAttribute('rotation',camera_rotx*-1+" "+camera_roty+" 20");
     el.setAttribute('position',(camera_positionx)+" "+(camera_positiony-0.8)+" "+camera_positionz);
-    this.el.setAttribute('handy','min',(min+1/5));
+    this.el.setAttribute('handy','min',(min+1/35));
     if(min >= 59){
         this.el.setAttribute('handy','hour',hour+1);
         this.el.setAttribute('handy','min',0);
