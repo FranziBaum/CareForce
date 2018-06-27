@@ -6,19 +6,15 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
     schema: {   //Das Schema beinhaltet die Parameter einer Komponente. In diesem Fall nur der Zustand.
         startTime: { type: 'int', default: 0 },
         currentTime: { type: 'int', default: 0 },
-        firstChallengeTime: { type: 'int', default: 10000 },
-        startDuration: { type: 'int', default: 10000 },
-        caretime: { type: 'int' },
+        firstChallengeTime: { type: 'int', default: 15000 },
+        caretime: { type: 'int', default: 1},
         state: { type: 'string', default: 'start' },
         challenges: { type: 'array' },
         activatedChallenges: { type: 'int', default: 0 },
         day: { type: 'int', default: 0 }
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
-        var challenges = document.querySelectorAll('a-collada-model[interactive]');
-        this.data.challenges = Array.from(challenges);
-        this.standby();
-        
+        this.startDay();     
 
     },
     update: function () {
@@ -28,17 +24,15 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
 
     },
     tick: function () {
+        this.data.currentTime = Date.now() - this.data.startTime;
+        console.log(this.data.currentTime);
 
-        if (this.data.state == 'play' && (this.data.activatedChallenges < this.data.caretime)) {
-            this.data.currentTime = Date.now() - this.data.startTime;
+        if (this.data.state == 'play') {
 
-            if (this.data.currentTime >= this.data.firstChallengeTime && this.data.challenges.length > 0) {
-                this.startChallenge();              
-
+            if (this.data.currentTime >= this.data.firstChallengeTime) {
+                this.startrandomChallenge();              
             }
-            if (this.data.activatedChallenges == this.data.caretime && this.data.currentTime >= this.data.firstChallengeTime) {
-                this.el.setAttribute('game', 'state', 'decide');;
-            }
+
         }
 
 
@@ -46,6 +40,8 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
 
     standby: function(){
         this.data.state = "standby";
+        start.setAttribute("visible", true);
+
 
 
 
@@ -60,6 +56,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         var next = document.getElementById('continue');
         var roomlamp = document.getElementById("roomlamp");
         var introsound = document.getElementById("introsound");
+        var start = document.getElementById("start");
 
         introsound.components.sound.playSound();
         roomlamp.setAttribute("intensity", 0.06);
@@ -72,6 +69,8 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
     
             headline.setAttribute("visible", true);
             next.setAttribute("visible", true);
+            start.setAttribute("visible", false);
+
 
 
         })
@@ -79,20 +78,27 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
 
     },
 
-    startChallenge: function(){
+    startrandomChallenge: function(){
+        this.data.startTime = Date.now();
+        console.log('starting random Challenge');
         var randomNumber = Math.floor(Math.random() * this.data.challenges.length);
         var randomChallenge = this.data.challenges[randomNumber];
-        randomChallenge.setAttribute('interactive', 'isActive', true);
+        console.log('got random challenge');
+
+        randomChallenge.components.interactive.activate();
         this.data.activatedChallenges += 1;
         this.data.challenges.splice(randomNumber, 1);
-        this.data.startTime = Date.now();
+        console.log("removed challenge from array");
         var blurElement = document.getElementById("blurwrap");
         blurElement.classList = '';
         blurElement.classList.add('blur' + this.data.activatedChallenges);
+        console.log("added blur");
     },
       
     startDay: function () {
-        this.data.state = "play";        
+        this.data.state = "play";  
+        var challenges = document.querySelectorAll('a-collada-model[interactive]');
+        this.data.challenges = Array.from(challenges);      
         var buttons = document.getElementsByClassName("pick");
         var headline = document.getElementById("poem");
         var end = document.getElementById("endgame");
@@ -106,11 +112,21 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         var sun = document.getElementById("sun");
         var next = document.getElementById('continue');
         var grannygreet = document.getElementById("grannygreet");
+        var start = document.getElementById("start");
+        start.setAttribute("visible", false);
+
 
         this.data.startTime = Date.now();
         this.data.activatedChallenges = 0;
         var challenges = document.querySelectorAll('a-collada-model[interactive]');
+        for (var i = 0; i < challenges.length; i++) {
+            challenges.item(i).setAttribute("found", false);
+            challenges.item(i).setAttribute("isActive", false);
+        }
         this.data.challenges = Array.from(challenges);
+        for (var i = 0; i < buttons.length; i++) {
+            buttons.item(i).setAttribute("visible", false);
+        }
         scene.setAttribute('background', 'color', 'lightblue');
         granny.setAttribute('visible', true);
         handy.setAttribute('visible', true);
@@ -127,10 +143,6 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
 
         if(this.data.day == 1){
             grannygreet.components.sound.playSound();
-        }
-
-        for (var i = 0; i < buttons.length; i++) {
-            buttons.item(i).setAttribute("visible", false);
         }
     },
 
