@@ -30,8 +30,12 @@ AFRAME.registerComponent('button', {
                 sceneEl.components.game.startOutro();
             }
             else if(this.id == 'continue'){
-                sceneEl.components.game.startDay();
-            }
+                if(sceneEl.components.game.data.day == 0){
+                    sceneEl.components.game.startDay();
+                }
+                else{
+                    sceneEl.components.game.night();
+                }            }
             else if(this.id == 'start'){
                 sceneEl.components.game.startIntro();
                 this.setAttribute("visible", false);

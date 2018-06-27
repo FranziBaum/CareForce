@@ -6,15 +6,15 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
     schema: {   //Das Schema beinhaltet die Parameter einer Komponente. In diesem Fall nur der Zustand.
         startTime: { type: 'int', default: 0 },
         currentTime: { type: 'int', default: 0 },
-        firstChallengeTime: { type: 'int', default: 15000 },
-        caretime: { type: 'int', default: 1},
+        firstChallengeTime: { type: 'int', default: 30000 },
+        caretime: { type: 'int', default: 1 },
         state: { type: 'string', default: 'start' },
         challenges: { type: 'array' },
         activatedChallenges: { type: 'int', default: 0 },
         day: { type: 'int', default: 0 }
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
-        this.startDay();     
+        this.startDay();
 
     },
     update: function () {
@@ -25,12 +25,21 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
     },
     tick: function () {
         this.data.currentTime = Date.now() - this.data.startTime;
-        console.log(this.data.currentTime);
+        console.log(this.data.day);
+                if (this.data.state == 'play') {
+            if (this.data.activatedChallenges < this.data.caretime && this.data.challenges.length > 0) {
 
-        if (this.data.state == 'play') {
+                if (this.data.currentTime >= this.data.firstChallengeTime) {
+                    this.startrandomChallenge();
+                }
+            }
+            if (this.data.activatedChallenges == this.data.caretime) {
+                if (this.data.currentTime >= this.data.firstChallengeTime*1.5) {
+                    this.endDay();
 
-            if (this.data.currentTime >= this.data.firstChallengeTime) {
-                this.startrandomChallenge();              
+                }
+
+
             }
 
         }
@@ -38,7 +47,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
 
     },
 
-    standby: function(){
+    standby: function () {
         this.data.state = "standby";
         start.setAttribute("visible", true);
 
@@ -46,7 +55,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
 
 
 
-  
+
 
     },
 
@@ -59,14 +68,14 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         var start = document.getElementById("start");
 
         introsound.components.sound.playSound();
-        roomlamp.setAttribute("intensity", 0.06);
+        roomlamp.setAttribute("light","intensity", 0.06);
 
-   
-        introsound.addEventListener('sound-ended', function(){
+
+        introsound.addEventListener('sound-ended', function () {
             for (var i = 0; i < buttons.length; i++) {
                 buttons.item(i).setAttribute("visible", true);
             }
-    
+
             headline.setAttribute("visible", true);
             next.setAttribute("visible", true);
             start.setAttribute("visible", false);
@@ -78,7 +87,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
 
     },
 
-    startrandomChallenge: function(){
+    startrandomChallenge: function () {
         this.data.startTime = Date.now();
         console.log('starting random Challenge');
         var randomNumber = Math.floor(Math.random() * this.data.challenges.length);
@@ -94,15 +103,16 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         blurElement.classList.add('blur' + this.data.activatedChallenges);
         console.log("added blur");
     },
-      
+
     startDay: function () {
-        this.data.state = "play";  
+        this.data.state = "play";
+        this.data.day += 1;
         var challenges = document.querySelectorAll('a-collada-model[interactive]');
-        this.data.challenges = Array.from(challenges);      
+        this.data.challenges = Array.from(challenges);
         var buttons = document.getElementsByClassName("pick");
         var headline = document.getElementById("poem");
         var end = document.getElementById("endgame");
-        var choose = document.getElementById("bye");       
+        var choose = document.getElementById("bye");
         var granny = document.getElementById('granny');
         var handy = document.getElementById('handy');
         var message = document.getElementById("elixir");
@@ -113,11 +123,14 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         var next = document.getElementById('continue');
         var grannygreet = document.getElementById("grannygreet");
         var start = document.getElementById("start");
+        var blurElement = document.getElementById("blurwrap");
         start.setAttribute("visible", false);
 
 
         this.data.startTime = Date.now();
         this.data.activatedChallenges = 0;
+        blurElement.classList = '';
+        blurElement.classList.add('blur' + this.data.activatedChallenges);
         var challenges = document.querySelectorAll('a-collada-model[interactive]');
         for (var i = 0; i < challenges.length; i++) {
             challenges.item(i).setAttribute("found", false);
@@ -130,24 +143,52 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         scene.setAttribute('background', 'color', 'lightblue');
         granny.setAttribute('visible', true);
         handy.setAttribute('visible', true);
-        roomlamp.setAttribute('intensity', 0.7);
-        ambientlight.setAttribute('intensity', 0.3);
-        sun.setAttribute('intensity', 0.5);
+        roomlamp.setAttribute('light','intensity', 0.7);
+        ambientlight.setAttribute('light','intensity', 0.3);
+        sun.setAttribute('light','intensity', 0.5);
         headline.setAttribute("visible", false);
         end.setAttribute("visible", false);
         choose.setAttribute("visible", false);
         message.setAttribute("visible", false);
         next.setAttribute("visible", false);
 
-        this.data.day += 1;
 
-        if(this.data.day == 1){
+        if (this.data.day == 1) {
             grannygreet.components.sound.playSound();
         }
     },
 
     endDay: function () {
-        this.data.state = "play";        
+        console.log("end day");
+        this.data.state = "decide";
+
+        var end = document.getElementById("endgame");
+        var handy = document.getElementById('handy');
+        var choose = document.getElementById("bye");
+        var headline = document.getElementById("poem");
+        var message = document.getElementById("elixir");
+        var next = document.getElementById('continue');
+        var buttons = document.getElementsByClassName("pick");
+        var endday1h_sound = document.getElementById("endday1h");
+        var endday2h_sound = document.getElementById("endday2h");
+        var endday4h_sound = document.getElementById("endday4h");
+
+        if(this.data.caretime == 1){
+            endday1h_sound.components.sound.playSound();
+        }
+        else if(this.data.caretime == 2){
+            endday2h_sound.components.sound.playSound();
+        }
+        else if(this.data.caretime == 4){
+            endday4h_sound.components.sound.playSound();
+        }
+
+
+
+
+
+
+
         handy.setAttribute('visible', false);
         end.setAttribute("visible", true);
         choose.setAttribute("visibel", true);
@@ -160,8 +201,32 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
 
     },
 
-    decisionDisplay: function () {
-        this.data.state = "decide";
+    night: function () {
+        var buttons = document.getElementsByClassName("pick");
+        var headline = document.getElementById("poem");
+        var end = document.getElementById("endgame");
+        var choose = document.getElementById("bye");
+        var next = document.getElementById('continue');
+        var ambientlight = document.getElementById("ambientlight");
+        var sunsphere = document.getElementById("sunsphere");
+        var camera = document.getElementById("kamera1");
+        var kameraanimation = document.getElementById("kameraanimation");
+        var scene = document.getElementById("scene");
+
+        headline.setAttribute("visible", false);
+        end.setAttribute("visible", false);
+        choose.setAttribute("visible", false);
+        next.setAttribute("visible", false);
+        for (var i = 0; i < buttons.length; i++) {
+            buttons.item(i).setAttribute("visible", false);
+        }
+
+        camera.emit("animate");
+        ambientlight.emit('animate');
+        sunsphere.emit("animate");
+        kameraanimation.addEventListener('animationend', function () {
+            scene.components.game.startDay();
+        })
     },
 
     startOutro: function () {
