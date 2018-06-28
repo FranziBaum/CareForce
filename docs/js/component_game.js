@@ -14,7 +14,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         day: { type: 'int', default: 1 }
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
-        this.startDay();
+        this.standby();
 
     },
     update: function () {
