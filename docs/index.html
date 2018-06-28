@@ -60,7 +60,7 @@
       <a-animation id="kameraanimation" attribute="position" begin="animate" delay="5000" from="0 0 -10" to="-0.1 0.2 1" dur="5000"></a-animation>
 
         <a-sound id="introsound" src="src: url(sounds/intro.mp3)" autoplay="false" position="0 2 5" volume="14"></a-sound>
-        <a-sound id="outrosound" src="src: url(sounds/outro.mp3)" autoplay="false" position="0 2 5"></a-sound>
+        <a-sound id="outrosound" src="src: url(sounds/outro.mp3)" autoplay="false" position="0 2 5" volume="14"></a-sound>
 
       <a-cursor fuse="true" fuseTimeout="1500" raycaster="objects:.clickable" position="0 0 -0.5" geometry="primitive: circle; radius: 0.1"
         material="color: white; shader: flat; transparent: true; opacity: 0.8" scale="0.1 0.1 0.1">
@@ -74,10 +74,10 @@
 
 
     <a-text id="poem" value="Wie viel Zeit kannst du aufbringen?" color="white" width="1.5" position="-0.6 0.3 0" visible="false" ></a-text>
-    <a-text id="bye" value="Was willst du tun?" color="white" width="1.5" position="-0.35 0.3 0" visible="false"></a-text>
+    <a-text id="bye" value="Für wie lange möchtest du morgen wieder kommen?" color="white" width="1.5" position="-0.35 0.3 0" visible="false"></a-text>
 
-    <a-text id="elixir" line-height="60" value=",,Jeder Mensch sehnt sich nach Zuneigung und Liebe. Bei Menschen mit Pflegebedarf ist das nicht anders. Das Beste was du tun kannst, ist ihnen deine Zeit zu schenken und ihnen zu zeigen, dass du da bist und sie dir wichtig sind. Geborgenheit und Liebe kann nicht gekauft oder hergestellt werden, man muss es durch seine Taten zeigen. Du hast es in der Hand, jemanden zu helfen.”
-    "color="white" width="2" position="-1 0.1 0" visible="false"></a-text>
+    <a-text id="elixir" line-height="60" align="center" value="Jeder Mensch sehnt sich nach Zuneigung und Liebe. Bei Menschen mit Pflegebedarf ist das nicht anders. Das Beste was du tun kannst, ist ihnen deine Zeit zu schenken und ihnen zu zeigen, dass du da bist und sie dir wichtig sind. Geborgenheit und Liebe kann nicht gekauft oder hergestellt werden, man muss es durch seine Taten zeigen. Du hast es in der Hand, jemandem zu helfen.”
+    "color="white" width="2" position="0 0.1 0" visible="false" shader="flat"></a-text>
    
     <a-entity light="type:point; castShadow:true; intensity:0.06;" id="roomlamp" position="0 0.75 0"></a-entity>
     <a-entity light="type:ambient; intensity:0;" id="ambientlight" position="0 0 0">
@@ -102,7 +102,7 @@
     <a-plane class="pick" button="value: 1" position="-1.5 0 -0.85" width="1" height="0.5" color="grey" shader="flat" rotation="0 20 0" visible="false"></a-plane>
     <a-plane class="pick" button="value: 2" position="0 0 -1" width="1" height="0.5" color="grey" shader="flat" rotation="0 0 0" class="clickable" visible="false"></a-plane>
     <a-plane class="pick" button="value: 4" position="1.5 0 -0.85" width="1" height="0.5" color="grey" shader="flat" rotation="0 -20 0" visible="false"></a-plane>
-    <a-plane id="endgame" button="value: End Game" position="-1.5 -1 -1" width="1" height="0.5" color="grey" shader="flat" rotation="0 0 0" visible="false"></a-plane>
+    <a-plane id="endgame" button="value: beenden" position="-1.5 -1 -1" width="1" height="0.5" color="grey" shader="flat" rotation="0 0 0" visible="false"></a-plane>
     <a-plane id="continue" button="value: Fortsetzen" position="0 -1 -1" width="1" height="0.5" color="grey" shader="flat" rotation="0 0 0" visible="false"></a-plane>
 
 
@@ -112,27 +112,30 @@
 
 
 
-    <a-collada-model id="granny" src="#grannybody_dae" position="-1 -0.6 0" rotation="0 45 0" scale="0.13 0.13 0.13" shadow="cast: true; receive: true;" visible="false">
+    <a-collada-model id="granny" src="#grannybody_dae" position="-1.2 -0.6 0.5" rotation="0 70 0" scale="0.13 0.13 0.13" shadow="cast: true; receive: true;" visible="false">
         <a-collada-model id="grannyhead" src="#grannyhead_dae" position="0 4.85 0" rotation="30 0 0" scale="1 1 1" shadow="cast: true; receive: true;">
           <a-animation attribute="rotation" from="0 0 0" to="0 0 0" dur="1000" fill="forward" begin="animate"></a-animation>
         </a-collada-model>
 
-      <a-sound id="grannygreet" src="src: url(sounds/grannygreet.m4a)" autoplay="false" position="0 0 0"></a-sound>
-      <a-sound id="startglasses" src="src: url(sounds/startglasses.m4a)" autoplay="false" position="0 0 0"></a-sound>
-      <a-sound id="endglasses" src="src: url(sounds/endglasses.m4a)" autoplay="false" position="0 0 0"></a-sound>
-      <a-sound id="expireglasses" src="src: url(sounds/expireglasses.m4a)" autoplay="false" position="0 0 0"></a-sound>
-      <a-sound id="startbook" src="src: url(sounds/startbook.m4a)" autoplay="false" position="0 0 0"></a-sound>
-      <a-sound id="endbook" src="src: url(sounds/endbook.m4a)" autoplay="false" position="0 0 0"></a-sound>
-      <a-sound id="expirebook" src="src: url(sounds/expirebook.m4a)" autoplay="false" position="0 0 0"></a-sound>
-      <a-sound id="startmusic" src="src: url(sounds/startmusic.m4a)" autoplay="false" position="0 0 0"></a-sound>
-      <a-sound id="endmusic" src="src: url(sounds/endmusic.m4a)" autoplay="false" position="0 0 0"></a-sound>
-      <a-sound id="expiremusic" src="src: url(sounds/expiremusic.m4a)" autoplay="false" position="0 0 0"></a-sound>
-      <a-sound id="startglas" src="src: url(sounds/startglas.m4a)" autoplay="false" position="0 0 0"></a-sound>
-      <a-sound id="endglas" src="src: url(sounds/endglas.m4a)" autoplay="false" position="0 0 0"></a-sound>
-      <a-sound id="expireglas" src="src: url(sounds/expireglas.m4a)" autoplay="false" position="0 0 0"></a-sound>
-      <a-sound id="endday1h" src="src: url(sounds/endday1h.m4a)" autoplay="false" position="0 0 0"></a-sound>
-      <a-sound id="endday2h" src="src: url(sounds/endday2h.m4a)" autoplay="false" position="0 0 0"></a-sound>
-      <a-sound id="endday4h" src="src: url(sounds/endday4h.m4a)" autoplay="false" position="0 0 0"></a-sound>
+      <a-sound id="grannygreet1" src="src: url(sounds/grannygreet.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+      <a-sound id="grannygreet2" src="src: url(sounds/grannygreet2.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+      <a-sound id="grannygreet3" src="src: url(sounds/grannygreet3.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+
+      <a-sound id="startglasses" src="src: url(sounds/startglasses.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+      <a-sound id="endglasses" src="src: url(sounds/endglasses.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+      <a-sound id="expireglasses" src="src: url(sounds/expireglasses.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+      <a-sound id="startbook" src="src: url(sounds/startbook.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+      <a-sound id="endbook" src="src: url(sounds/endbook.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+      <a-sound id="expirebook" src="src: url(sounds/expirebook.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+      <a-sound id="startmusic" src="src: url(sounds/startmusic.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+      <a-sound id="endmusic" src="src: url(sounds/endmusic.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+      <a-sound id="expiremusic" src="src: url(sounds/expiremusic.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+      <a-sound id="startglas" src="src: url(sounds/startglas.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+      <a-sound id="endglas" src="src: url(sounds/endglas.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+      <a-sound id="expireglas" src="src: url(sounds/expireglas.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+      <a-sound id="endday1h" src="src: url(sounds/endday1h.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+      <a-sound id="endday2h" src="src: url(sounds/endday2h.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+      <a-sound id="endday4h" src="src: url(sounds/endday4h.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
 
 
 
