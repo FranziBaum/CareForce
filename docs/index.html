@@ -37,7 +37,9 @@
       <a-asset-item id="heart_obj" src="assets/heart.obj"></a-asset-item>
       <a-asset-item id="plattenspieler_dae" src="assets/plattenspieler.dae"></a-asset-item>
       <a-asset-item id="music_dae" src="assets/music.dae"></a-asset-item>
-      <a-asset-item id="granny_dae" src="assets/granny.dae"></a-asset-item>
+      <a-asset-item id="grannybody_dae" src="assets/grannybody.dae"></a-asset-item>
+      <a-asset-item id="grannyhead_dae" src="assets/grannyhead.dae"></a-asset-item>
+
       <a-asset-item id="tulip0_dae" src="assets/tulip0.dae"></a-asset-item>
       <a-asset-item id="tulip20_dae" src="assets/tulip20.dae"></a-asset-item>
       <a-asset-item id="tulip40_dae" src="assets/tulip40.dae"></a-asset-item>
@@ -57,7 +59,9 @@
       <a-animation attribute="position" begin="animate" from="-0.1 0.2 1" to="0 0 -10" dur="5000"></a-animation>
       <a-animation id="kameraanimation" attribute="position" begin="animate" delay="5000" from="0 0 -10" to="-0.1 0.2 1" dur="5000"></a-animation>
 
-        <a-sound id="introsound" src="src: url(sounds/intro.m4a)" autoplay="false" position="0 2 5"></a-sound>
+        <a-sound id="introsound" src="src: url(sounds/intro.mp3)" autoplay="false" position="0 2 5" volume="14"></a-sound>
+        <a-sound id="outrosound" src="src: url(sounds/outro.mp3)" autoplay="false" position="0 2 5"></a-sound>
+
       <a-cursor fuse="true" fuseTimeout="1500" raycaster="objects:.clickable" position="0 0 -0.5" geometry="primitive: circle; radius: 0.1"
         material="color: white; shader: flat; transparent: true; opacity: 0.8" scale="0.1 0.1 0.1">
         <a-animation begin="fusing" easing="ease-out" attribute="scale" dur="100" fill="forwards" from="0.1 0.1 0.1" to="0.13 0.13 0.13"></a-animation>
@@ -75,7 +79,7 @@
     <a-text id="elixir" line-height="60" value=",,Jeder Mensch sehnt sich nach Zuneigung und Liebe. Bei Menschen mit Pflegebedarf ist das nicht anders. Das Beste was du tun kannst, ist ihnen deine Zeit zu schenken und ihnen zu zeigen, dass du da bist und sie dir wichtig sind. Geborgenheit und Liebe kann nicht gekauft oder hergestellt werden, man muss es durch seine Taten zeigen. Du hast es in der Hand, jemanden zu helfen.”
     "color="white" width="2" position="-1 0.1 0" visible="false"></a-text>
    
-    <a-entity light="type:point; castShadow:true; intensity:0.06;" id="roomlamp" position="0 0 0"></a-entity>
+    <a-entity light="type:point; castShadow:true; intensity:0.06;" id="roomlamp" position="0 0.75 0"></a-entity>
     <a-entity light="type:ambient; intensity:0;" id="ambientlight" position="0 0 0">
         <a-animation attribute="light.intensity" from="0.3" to="0.01" begin="animate" dur="7500" repeat="1" direction="alternate"></a-animation>
 
@@ -94,7 +98,6 @@
 
 
 
-    <a-light id="roomlamp" type="point" position="0 0 0" intensity="0.00"></a-light>
     <a-plane id="start" button="value: Let's go!" position="0 -0.3 -1" width="1" height="0.5" color="grey" shader="flat"></a-plane>
     <a-plane class="pick" button="value: 1" position="-1.5 0 -0.85" width="1" height="0.5" color="grey" shader="flat" rotation="0 20 0" visible="false"></a-plane>
     <a-plane class="pick" button="value: 2" position="0 0 -1" width="1" height="0.5" color="grey" shader="flat" rotation="0 0 0" class="clickable" visible="false"></a-plane>
@@ -109,7 +112,11 @@
 
 
 
-    <a-collada-model id="granny" src="#granny_dae" position="-1 -0.6 0" rotation="0 45 0" scale="0.13 0.13 0.13" shadow="cast: true; receive: true;" visible="false">
+    <a-collada-model id="granny" src="#grannybody_dae" position="-1 -0.6 0" rotation="0 45 0" scale="0.13 0.13 0.13" shadow="cast: true; receive: true;" visible="false">
+        <a-collada-model id="grannyhead" src="#grannyhead_dae" position="0 4.85 0" rotation="30 0 0" scale="1 1 1" shadow="cast: true; receive: true;">
+          <a-animation attribute="rotation" from="0 0 0" to="0 0 0" dur="1000" fill="forward" begin="animate"></a-animation>
+        </a-collada-model>
+
       <a-sound id="grannygreet" src="src: url(sounds/grannygreet.m4a)" autoplay="false" position="0 0 0"></a-sound>
       <a-sound id="startglasses" src="src: url(sounds/startglasses.m4a)" autoplay="false" position="0 0 0"></a-sound>
       <a-sound id="endglasses" src="src: url(sounds/endglasses.m4a)" autoplay="false" position="0 0 0"></a-sound>
@@ -129,7 +136,7 @@
 
 
 
-      <a-obj-model feedback id="heart" src="#heart_obj" position="0.3 2.6 1.5" scale="1.5 1.5 1.5" rotation="0 90 0" shadow="cast: false; receive: false;"></a-obj-model>
+      <a-obj-model feedback id="heart" src="#heart_obj" position="0.1 2.9 1.6" scale="1.5 1.5 1.5" rotation="0 90 0" shadow="cast: false; receive: false;"></a-obj-model>
 
     </a-collada-model>
       </a-collada-model>

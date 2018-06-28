@@ -230,6 +230,8 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
     },
 
     startOutro: function () {
+        var outrosound = document.getElementById("outrosound");
+        outrosound.components.sound.playSound();
         this.data.state = "outro";
         end.setAttribute("visible", true);
         this.data.startTime = Date.now();
