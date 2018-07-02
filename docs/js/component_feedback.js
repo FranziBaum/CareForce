@@ -4,7 +4,7 @@
 
 AFRAME.registerComponent('feedback', { //Hier wird ein Component mit dem Namen "interact" registriert.
     schema: {   //Das Schema beinhaltet die Parameter einer Komponente. In diesem Fall nur der Zustand.
-        value: { type: 'int', default: 40 },
+        value: { type: 'int', default: 30 },
 
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
@@ -15,6 +15,8 @@ AFRAME.registerComponent('feedback', { //Hier wird ein Component mit dem Namen "
     },
     update: function () {
         var roundValue = Math.round(this.data.value/10)*10;
+        var roundValueTwenty = Math.round(this.data.value/20)*20;
+        console.log("zwanziger: "+roundValueTwenty);
         
 
         var greyElement = document.getElementById("greywrap");
@@ -28,18 +30,18 @@ AFRAME.registerComponent('feedback', { //Hier wird ein Component mit dem Namen "
         else if(this.data.value > 100){
             this.data.value = 100;
         }
-        console.log(roundValue);
         var data= this.data;
         var el= this.el;
-        el.setAttribute('material', 'color','rgb('+Math.round((data.value/100)*255)+',0,'+Math.round(255-((data.value/100)*255))+')');
-
         var heart = document.getElementById('heart');
         if(this.el == heart){
         el.setAttribute('material', 'color','rgb('+Math.round((data.value/100)*255)+',0,'+Math.round(255-((data.value/100)*255))+')');
         }
 
         var tulip = document.getElementById('tulip');
-        tulip.setAttribute('src','#tulip'+roundValue+'_dae');
+        tulip.setAttribute('src','#tulip'+roundValueTwenty+'_dae');
+
+        var grannyhead = document.getElementById('grannyhead');
+        grannyhead.setAttribute('rotation',""+(1-(this.data.value/100))*(30)+" 0 0");
 
 
 

@@ -7,7 +7,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         startTime: { type: 'int', default: 0 },
         currentTime: { type: 'int', default: 0 },
         firstChallengeTime: { type: 'int', default: 20000 },
-        caretime: { type: 'int', default: 1 },
+        caretime: { type: 'int', default: 0 },
         state: { type: 'string', default: 'start' },
         challenges: { type: 'array' },
         activatedChallenges: { type: 'int', default: 0 },
@@ -105,6 +105,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
 
     startDay: function () {
         this.data.state = "play";
+        this.data.day = this.data.day+1;
         var challenges = document.querySelectorAll('a-collada-model[interactive]');
         this.data.challenges = Array.from(challenges);
         var buttons = document.getElementsByClassName("pick");
@@ -170,8 +171,6 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
     endDay: function () {
         console.log("end day");
         this.data.state = "decide";
-        this.data.day += 1;
-
         var end = document.getElementById("endgame");
         var handy = document.getElementById('handy');
         var choose = document.getElementById("bye");
