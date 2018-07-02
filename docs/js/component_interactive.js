@@ -42,8 +42,6 @@ AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Name
         console.log('aktiviert');
         this.data.startTime = Date.now();
         this.el.classList.add("clickable");
-        document.querySelector('#handytext').setAttribute('value', this.el.id);
-        console.log("activated "+this.el.id);
         },
 
     find: function () {
@@ -78,7 +76,6 @@ AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Name
         var heartvalue = heart.getAttribute('feedback').value;
         heart.setAttribute('feedback', 'value', heartvalue - this.data.influence / 2);
         this.el.classList.remove("clickable");
-        document.querySelector('#handytext').setAttribute('value', 'keins');
         console.log("expired");
 
     }

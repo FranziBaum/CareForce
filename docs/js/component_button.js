@@ -23,6 +23,7 @@ AFRAME.registerComponent('button', {
 
         var buttons = sceneEl.querySelectorAll('a-plane');
         this.el.addEventListener('click', function () {
+            console.log(sceneEl.components.game.data.day);
             for (var i = 0; i < buttons.length; i++) {
                 buttons.item(i).setAttribute('color', 'grey');
         }
@@ -47,7 +48,7 @@ AFRAME.registerComponent('button', {
                 var value = this.getAttribute('button').value;
                 scene.setAttribute('game','caretime',value);
             }
-            this.setAttribute('color', 'red');
+            this.setAttribute('color', 'orange');
     
         });
 

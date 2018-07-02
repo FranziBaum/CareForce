@@ -98,7 +98,7 @@
 
 
 
-    <a-plane id="start" button="value: Let's go!" position="0 -0.3 -1" width="1" height="0.5" color="grey" shader="flat"></a-plane>
+    <a-plane id="start" button="value: START" position="0 -0.3 -1" width="1" height="0.5" color="grey" shader="flat"></a-plane>
     <a-plane class="pick" button="value: 1" position="-1.5 0 -0.85" width="1" height="0.5" color="grey" shader="flat" rotation="0 20 0" visible="false"></a-plane>
     <a-plane class="pick" button="value: 2" position="0 0 -1" width="1" height="0.5" color="grey" shader="flat" rotation="0 0 0" class="clickable" visible="false"></a-plane>
     <a-plane class="pick" button="value: 4" position="1.5 0 -0.85" width="1" height="0.5" color="grey" shader="flat" rotation="0 -20 0" visible="false"></a-plane>
@@ -145,7 +145,7 @@
       </a-collada-model>
 
 
-    <a-collada-model id="tulip" src="#tulip100_dae" position="3.5 -0.66 -1.8" scale="1.5 1.5 1.5" shadow="cast: true; receive: true;"></a-collada-model>
+    <a-collada-model id="tulip" src="#tulip100_dae" position="3.5 -0.66 -1.8" scale="1.5 1.5 1.5" shadow="cast: true; receive: false;"></a-collada-model>
 
 
 
@@ -154,8 +154,6 @@
       visible="false">
       <a-text id="uhr" value="12:30" rotation="-90 0 0" align="center" color="white" position="0.495 -0.3972 -0.5" wrap-count="150">
       </a-text>
-      <a-text id="handytext" value="jojo" rotation="-90 0 0" align="center" color="white" position="0.495 -0.3972 -0.6" wrap-count="150">
-
     </a-collada-model>
 
     <a-collada-model id="room" src="#room_dae" position="0 0 0" rotation="0 0 0" shadow="receive: true; cast: true"></a-collada-model>
