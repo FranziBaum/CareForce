@@ -60,13 +60,15 @@
 
     </a-assets>
 
+    <a-entity id='cameraWrapper' position="-0.1 0.3 1">
+
       <!-- Hier wird dei Kamera/Sicht des Nutzers erstellt -->
-    <a-camera position="-0.1 0.3 1" rotation="0 0 0" id="kamera1" look-controls wasd-controls>
+    <a-camera position="0 0 0" rotation="0 0 0" id="kamera1" look-controls wasd-controls>
       <a-animation attribute="position" begin="animate" from="-0.1 0.2 1" to="0 0 -10" dur="5000"></a-animation>
       <a-animation id="kameraanimation" attribute="position" begin="animate" delay="5000" from="0 0 -10" to="-0.1 0.2 1" dur="5000"></a-animation>
 
-        <a-sound id="introsound" src="src: url(sounds/intro.mp3)" autoplay="false" volume="14"></a-sound>
-        <a-sound id="outrosound" src="src: url(sounds/outro.mp3)" autoplay="false" volume="14"></a-sound>
+        <a-sound id="introsound" src="src: url(sounds/intro.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+        <a-sound id="outrosound" src="src: url(sounds/outro.mp3)" autoplay="false" position="0 2 5" volume="14"></a-sound>
 
       <a-cursor fuse="true" fuseTimeout="1500" raycaster="objects:.clickable" position="0 0 -0.5" geometry="primitive: circle; radius: 0.1"
         material="color: white; shader: flat; transparent: true; opacity: 0.8" scale="0.1 0.1 0.1">
@@ -76,6 +78,7 @@
         <a-animation begin="click" attribute="scale" dur="300" fill="forwards" easing="ease-in" from="0.04 0.04 0.04" to="0.1 0.1 0.1"></a-animation>
       </a-cursor>
     </a-camera>
+  </a-entity>
 
 
 
