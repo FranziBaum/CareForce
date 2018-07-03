@@ -8,8 +8,6 @@ AFRAME.registerComponent('feedback', { //Hier wird ein Component mit dem Namen "
 
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
-    var granny = document.getElementById("granny");
-
 
 
     },
