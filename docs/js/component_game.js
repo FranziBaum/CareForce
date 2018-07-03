@@ -259,6 +259,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         var kameraanimation = document.getElementById("kameraanimation");
         var scene = document.getElementById("scene");
         var message = document.getElementById("elixir");
+        var camerawrapper = document.getElementById("cameraWrapper");
 
 
         headline.setAttribute("visible", false);
@@ -269,7 +270,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
             buttons.item(i).setAttribute("visible", false);
         }
 
-        camera.emit("animate");
+        camerawrapper.emit("animate");
         ambientlight.emit('animate');
         sunsphere.emit("animate");
         kameraanimation.addEventListener('animationend', function () {

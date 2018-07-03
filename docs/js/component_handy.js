@@ -24,11 +24,12 @@ AFRAME.registerComponent('handy', { //Hier wird ein Component mit dem Namen "int
     var min = this.el.getAttribute('handy').min;
     var hour = this.el.getAttribute('handy').hour;
     var uhr = document.querySelector('#uhr');
+    var camerawrapper = document.getElementById('cameraWrapper');
     var camera_rotx = document.querySelector('#kamera1').getAttribute('rotation').x;
     var camera_roty = document.querySelector('#kamera1').getAttribute('rotation').y;
-    var camera_positionx = document.querySelector('#kamera1').getAttribute('position').x;
-    var camera_positiony = document.querySelector('#kamera1').getAttribute('position').y;
-    var camera_positionz = document.querySelector('#kamera1').getAttribute('position').z;
+    var camera_positionx = camerawrapper.getAttribute('position').x;
+    var camera_positiony = camerawrapper.getAttribute('position').y;
+    var camera_positionz = camerawrapper.getAttribute('position').z;
     el.setAttribute('rotation',camera_rotx*-1+" "+camera_roty+" 20");
     el.setAttribute('position',(camera_positionx)+" "+(camera_positiony-0.8)+" "+camera_positionz);
     this.el.setAttribute('handy','min',(min+1/25));
