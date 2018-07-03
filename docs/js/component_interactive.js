@@ -67,8 +67,6 @@ AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Name
 
     expire: function () {
         console.log("expire");
-        var expiresound = document.getElementById("expire"+this.el.id);
-        expiresound.components.sound.playSound();
 
         this.data.isActive = false;
         var heart = document.querySelector('#heart');
