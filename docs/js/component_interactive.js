@@ -67,7 +67,6 @@ AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Name
 
     expire: function () {
         console.log("expire");
-
         this.data.isActive = false;
         var heart = document.querySelector('#heart');
         var heartvalue = heart.getAttribute('feedback').value;
