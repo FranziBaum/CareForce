@@ -7,7 +7,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         startTime: { type: 'int', default: 0 },
         currentTime: { type: 'int', default: 0 },
         firstChallengeTime: { type: 'int', default: 20000 },
-        caretime: { type: 'int', default: 0 },
+        caretime: { type: 'int', default: 1 },
         state: { type: 'string', default: 'start' },
         challenges: { type: 'array' },
         activatedChallenges: { type: 'int', default: 0 },
@@ -15,7 +15,6 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
     },
     init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
         this.standby();
-
     },
     update: function () {
 
@@ -65,6 +64,10 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         var roomlamp = document.getElementById("roomlamp");
         var introsound = document.getElementById("introsound");
         var start = document.getElementById("start");
+        var logo = document.getElementById("logo");
+        logo.setAttribute("visible", false);
+
+
 
         introsound.components.sound.playSound();
         roomlamp.setAttribute("light","intensity", 0.06);
@@ -78,7 +81,6 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
             headline.setAttribute("visible", true);
             next.setAttribute("visible", true);
             start.setAttribute("visible", false);
-
 
 
         });
@@ -104,8 +106,9 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
     },
 
     startDay: function () {
+        var yesterday = this.data.day;
         this.data.state = "play";
-        this.data.day = this.data.day+1;
+        this.data.day = yesterday+1;
         var challenges = document.querySelectorAll('a-collada-model[interactive]');
         this.data.challenges = Array.from(challenges);
         var buttons = document.getElementsByClassName("pick");
@@ -135,6 +138,7 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         blurElement.classList = '';
         blurElement.classList.add('blur' + this.data.activatedChallenges);
         var challenges = document.querySelectorAll('a-collada-model[interactive]');
+        console.log(challenges);
         for (var i = 0; i < challenges.length; i++) {
             challenges.item(i).setAttribute("found", false);
             challenges.item(i).setAttribute("isActive", false);
@@ -154,6 +158,8 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         choose.setAttribute("visible", false);
         message.setAttribute("visible", false);
         next.setAttribute("visible", false);
+
+
 
         if(this.data.day == 1){
             grannygreet1.components.sound.playSound();
@@ -308,6 +314,12 @@ AFRAME.registerComponent('game', { //Hier wird ein Component mit dem Namen "inte
         start.setAttribute("visible", false);
         granny.setAttribute("visible", false);
         scene.setAttribute("background", "black");
+
+        outrosound.addEventListener('sound-ended', function () {
+            document.location.reload()
+
+        });
+
 
 
 

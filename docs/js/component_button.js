@@ -8,10 +8,10 @@ AFRAME.registerComponent('button', {
     init: function () {
         textelement = document.createElement('a-text');
         this.el.appendChild(textelement);
-        if(this.el.id == 'endgame' || this.el.id == 'continue' || this.el.id == 'start'){
-        textelement.setAttribute('value', this.data.value);
+        if (this.el.id == 'endgame' || this.el.id == 'continue' || this.el.id == 'start') {
+            textelement.setAttribute('value', this.data.value);
         }
-        else{
+        else {
             textelement.setAttribute('value', this.data.value + " h");
         }
         textelement.setAttribute('color', "black");
@@ -26,35 +26,35 @@ AFRAME.registerComponent('button', {
             console.log(sceneEl.components.game.data.day);
             for (var i = 0; i < buttons.length; i++) {
                 buttons.item(i).setAttribute('color', 'grey');
-        }
-            if(this.id == 'endgame'){
+            }
+            if (this.id == 'endgame') {
                 sceneEl.components.game.startOutro();
             }
-            else if(this.id == 'continue'){
-                if(sceneEl.components.game.data.day == 0){
-                    sceneEl.components.game.startDay();
-                }
-                else{
-                    sceneEl.components.game.night();
-                }            }
-            else if(this.id == 'start'){
+            else if (this.id == 'continue' && scene.components.game.data.day == 0) {
+                scene.components.game.startDay();
+            }
+            else if (this.id == 'continue' && scene.components.game.data.day >= 1) {
+                scene.components.game.night();
+            }
+
+            else if (this.id == 'start') {
                 sceneEl.components.game.startIntro();
                 this.setAttribute("visible", false);
 
             }
-                
 
-            else if(this.classList.contains('pick')){
+
+            else if (this.classList.contains('pick')) {
                 var value = this.getAttribute('button').value;
-                scene.setAttribute('game','caretime',value);
+                scene.setAttribute('game', 'caretime', value);
             }
             this.setAttribute('color', 'orange');
-    
+
         });
 
     },
     update: function () {
-   
+
 
 
     },
@@ -63,7 +63,7 @@ AFRAME.registerComponent('button', {
         if (visible == true) {
             this.el.classList.add("clickable");
         }
-        else if(visible == false){
+        else if (visible == false) {
             this.el.classList.remove("clickable");
         }
     }
