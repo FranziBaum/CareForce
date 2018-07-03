@@ -1,8 +1,4 @@
-/* jslint esversion: 6 */
-
-//Registrieren von einer Komponente/Klasse
-
-AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Namen "interact" registriert.
+AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Namen "interactive" registriert.
     schema: {   //Das Schema beinhaltet die Parameter einer Komponente. In diesem Fall nur der Zustand.
         isActive: { type: 'boolean', default: false }, //Der Parameter "isActive" beinhaltet einen boolean und ist standarweise "false".
         activeTime: { type: 'int', default: 15000 },
@@ -20,7 +16,7 @@ AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Name
         });
 
     },
-    update: function () {
+    update: function () { //Die "update"-Funktion wird zu Beginn genau 1 mal aufgerufen und jedes Mal wenn sich ein Parameter ändert.
  
     },
     tick: function () {

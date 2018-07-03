@@ -1,13 +1,9 @@
-/* jslint esversion: 6 */
-
-//Registrieren von einer Komponente/Klasse
-
-AFRAME.registerComponent('feedback', { //Hier wird ein Component mit dem Namen "interact" registriert.
-    schema: {   //Das Schema beinhaltet die Parameter einer Komponente. In diesem Fall nur der Zustand.
+AFRAME.registerComponent('feedback', { 
+    schema: { 
         value: { type: 'int', default: 30 },
 
     },
-    init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
+    init: function () { 
 
 
     },

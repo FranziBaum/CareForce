@@ -1,14 +1,11 @@
-/* jslint esversion: 6 */
 
-//Registrieren von einer Komponente/Klasse
-
-AFRAME.registerComponent('handy', { //Hier wird ein Component mit dem Namen "interact" registriert.
-    schema: {   //Das Schema beinhaltet die Parameter einer Komponente. In diesem Fall nur der Zustand.
+AFRAME.registerComponent('handy', { 
+    schema: {  
         hour: { type: 'int', default: 12 },
         min: { type: 'float', default: 55 },
 
     },
-    init: function () { //Die "init"-Funktion wird zu Beginn genau 1 mal aufgerufen.
+    init: function () { 
 
     
     },
@@ -16,7 +13,7 @@ AFRAME.registerComponent('handy', { //Hier wird ein Component mit dem Namen "int
 
        
       },
-    tick: function () { //Die "tick"-Funktion wird andauernd aufgerufen. (siehe draw() Funktion in p5)
+    tick: function () { 
     var game = document.getElementById('scene');
 
     if(game.getAttribute('game').state == 'play'){
