@@ -2,7 +2,7 @@ AFRAME.registerComponent('game', {
     schema: { 
         startTime: { type: 'int', default: 0 },
         currentTime: { type: 'int', default: 0 },
-        firstChallengeTime: { type: 'int', default: 20000 },
+        firstChallengeTime: { type: 'int', default: 20000},
         caretime: { type: 'int', default: 1 },
         state: { type: 'string', default: 'start' },
         challenges: { type: 'array' },
