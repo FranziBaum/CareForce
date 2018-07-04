@@ -173,11 +173,11 @@
       </a-collada-model>
     </a-collada-model>
 
-    <a-collada-model interactive="influence: 60" id="glasses" src="#glasses_dae" position="-3 -0.85 1" shadow="cast: true; receive: true">
+    <a-collada-model interactive="influence: 40" id="glasses" src="#glasses_dae" position="-3 -0.85 1" shadow="cast: true; receive: true">
       <a-animation attribute="position" begin="animate" dur="5000" to="0 0 0"></a-animation>
     </a-collada-model>
 
-    <a-collada-model interactive id="glas" src="#glas_dae" position="3.6 -0.65 -1.3" shadow="cast: false; receive: false">
+    <a-collada-model interactive="influence: 40" id="glas" src="#glas_dae" position="3.6 -0.65 -1.3" shadow="cast: false; receive: false">
         <a-animation attribute="position" begin="animate" dur="2000" from="3.6 -0.65 -1.3" to="-0.9 -0.4 0.5">
         </a-animation>
         <a-animation attribute="position" begin="animate" delay="3000" dur="3000" from="-0.9 -0.4 0.5" to="3.6 -0.65 -1.3"></a-animation>
@@ -189,7 +189,7 @@
 
 
     <a-collada-model id="plattenspieler" src="#plattenspieler_dae" position="0 0 2.4" rotation="0 0 0" shadow="cast: true; receive: true;">
-      <a-collada-model interactive="influence: 40" id="music" src="#music_dae" shadow="cast: false; receive: false;">
+      <a-collada-model interactive="influence: 30" id="music" src="#music_dae" shadow="cast: false; receive: false;">
         <a-animation attribute="rotation" begin="animate" dur="30000" to="0 1300 0"></a-animation>
       </a-collada-model>
     </a-collada-model>
