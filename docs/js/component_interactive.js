@@ -30,6 +30,9 @@ AFRAME.registerComponent('interactive', { //Hier wird ein Component mit dem Name
         if(this.el.id == "glasses"){
             this.el.setAttribute("position", "-3, -0.85, 1");
         }
+        else if(this.el.id == "window"){
+            
+        }
         var startsound = document.getElementById("start"+this.el.id);
         startsound.components.sound.playSound();
 

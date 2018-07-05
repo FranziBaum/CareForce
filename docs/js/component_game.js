@@ -10,7 +10,7 @@ AFRAME.registerComponent('game', {
         day: { type: 'int', default: 1 }
     },
     init: function () { 
-        this.standby();
+        this.startDay();
     },
     update: function () {
 
@@ -257,7 +257,7 @@ AFRAME.registerComponent('game', {
             buttons.item(i).setAttribute("visible", false);
         }
 
-        camerawrapper.emit("animate");
+        kameraanimation.emit("animate");
         ambientlight.emit('animate');
         sunsphere.emit("animate");
         kameraanimation.addEventListener('animationend', function () {

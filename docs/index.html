@@ -42,6 +42,7 @@
       <a-asset-item id="grannyhead_dae" src="assets/grannyhead.dae"></a-asset-item>
       <a-asset-item id="lamp_dae" src="assets/lamp.dae"></a-asset-item>
       <a-asset-item id="glas_dae" src="assets/glas.dae"></a-asset-item>
+      <a-asset-item id="window_dae" src="assets/window.dae"></a-asset-item>
 
 
 
@@ -139,6 +140,8 @@
       <a-sound id="endday1h" src="src: url(sounds/endday1h.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
       <a-sound id="endday2h" src="src: url(sounds/endday2h.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
       <a-sound id="endday4h" src="src: url(sounds/endday4h.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+      <a-sound id="startwindow" src="src: url(sounds/startwindow.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
+      <a-sound id="endwindow" src="src: url(sounds/endwindow.mp3)" autoplay="false" position="0 0 0" volume="14"></a-sound>
 
 
 
@@ -162,6 +165,16 @@
 
     <a-collada-model id="room" src="#room_dae" position="0 0 0" rotation="0 0 0" shadow="receive: true; cast: true"></a-collada-model>
     <a-collada-model id="lamp" src="#lamp_dae" position="0 0 0" rotation="0 0 0"></a-collada-model>
+    <a-collada-model interactive id="window" src="#window_dae" position="-1.36 0.01 -3.25" rotation="0 0 0" scale="0.99 0.97 0.97">
+        <a-animation attribute="rotation" begin="animate" dur="5000" to="0 -45 0"></a-animation>
+
+
+    </a-collada-model>
+    <a-collada-model src="#window_dae" position="1.34 0.01 -3.25" rotation="0 0 0" scale="-0.99 0.97 0.97">
+
+
+    </a-collada-model>
+
 
     <a-collada-model id="schrank" src="#schrank_dae" shadow="cast: true; receive: true;">
       <a-collada-model interactive="influence: 40" id="book" src="#book_dae" position="3.3 0 2.4" rotation="0 0 0" shadow="cast: true; receive: true;">
