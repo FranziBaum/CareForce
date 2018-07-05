@@ -121,6 +121,7 @@ AFRAME.registerComponent('game', {
         var grannygreet1 = document.getElementById("grannygreet1");
         var grannygreet2 = document.getElementById("grannygreet2");
         var grannygreet3 = document.getElementById("grannygreet3");
+        var grannygreets = [grannygreet1, grannygreet2, grannygreet3];
 
 
         var start = document.getElementById("start");
@@ -154,17 +155,8 @@ AFRAME.registerComponent('game', {
         next.setAttribute("visible", false);
 
 
+            random(grannygreets).components.sound.playSound();
 
-        if(this.data.day == 1){
-            grannygreet1.components.sound.playSound();
-        }
-        else if(this.data.day == 2){
-            grannygreet2.components.sound.playSound();
-        }
-        else if(this.data.day == 3){
-            grannygreet3.components.sound.playSound();
-
-        }
     
     },
 
