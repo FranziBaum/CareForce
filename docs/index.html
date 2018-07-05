@@ -16,6 +16,8 @@
   <script src="js/component_game.js"></script>
   <script src="js/component_feedback.js"></script>
   <script src="js/component_handy.js"></script>
+  <script src="js/fixgearvrheight.js"></script>
+
 </head>
   <!-- Da es sich um ein HTML Dokument handelt gibt es einen body-tag für den Inhalt -->
 <body>
@@ -59,7 +61,7 @@
 
     </a-assets>
 
-    <a-entity id="cameraWrapper" position="-0.1 0.3 1">
+    <a-entity gearvr-height-fix id="cameraWrapper" position="-0.1 0.3 1">
         <a-animation attribute="position" begin="animate" from="-0.1 0.3 1" to="0 0 -10" dur="5000"></a-animation>
         <a-animation id="kameraanimation" attribute="position" begin="animate" delay="5000" from="0 0 -10" to="-0.1 0.3 1" dur="5000"></a-animation>
 
