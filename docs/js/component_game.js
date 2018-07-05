@@ -2,7 +2,7 @@ AFRAME.registerComponent('game', {
     schema: { 
         startTime: { type: 'int', default: 0 },
         currentTime: { type: 'int', default: 0 },
-        firstChallengeTime: { type: 'int', default: 20000},
+        firstChallengeTime: { type: 'int', default: 25000},
         caretime: { type: 'int', default: 1 },
         state: { type: 'string', default: 'start' },
         challenges: { type: 'array' },
@@ -145,7 +145,7 @@ AFRAME.registerComponent('game', {
         }
         scene.setAttribute('background', 'color', 'lightblue');
         granny.setAttribute('visible', true);
-        handy.setAttribute('visible', true);
+        //handy.setAttribute('visible', true);
         roomlamp.setAttribute('light','intensity', 0.7);
         ambientlight.setAttribute('light','intensity', 0.3);
         sun.setAttribute('light','intensity', 0.5);
@@ -174,7 +174,7 @@ AFRAME.registerComponent('game', {
         console.log("end day");
         this.data.state = "decide";
         var end = document.getElementById("endgame");
-        var handy = document.getElementById('handy');
+        //var handy = document.getElementById('handy');
         var choose = document.getElementById("bye");
         var headline = document.getElementById("poem");
         var message = document.getElementById("elixir");
@@ -188,7 +188,7 @@ AFRAME.registerComponent('game', {
         if(this.data.caretime == 1){
             endday1h_sound.components.sound.playSound();
             endday1h.addEventListener('sound-ended', function () {
-                handy.setAttribute('visible', false);
+                //handy.setAttribute('visible', false);
                 end.setAttribute("visible", true);
                 choose.setAttribute("visibel", true);
                 headline.setAttribute("visible", false);
@@ -204,7 +204,7 @@ AFRAME.registerComponent('game', {
         else if(this.data.caretime == 2){
             endday2h_sound.components.sound.playSound();
             endday2h.addEventListener('sound-ended', function () {
-                handy.setAttribute('visible', false);
+                //handy.setAttribute('visible', false);
                 end.setAttribute("visible", true);
                 choose.setAttribute("visibel", true);
                 headline.setAttribute("visible", false);
@@ -220,7 +220,7 @@ AFRAME.registerComponent('game', {
         else if(this.data.caretime == 4){
             endday4h_sound.components.sound.playSound();
             endday4h.addEventListener('sound-ended', function () {
-                handy.setAttribute('visible', false);
+                //handy.setAttribute('visible', false);
                 end.setAttribute("visible", true);
                 choose.setAttribute("visibel", true);
                 headline.setAttribute("visible", false);
