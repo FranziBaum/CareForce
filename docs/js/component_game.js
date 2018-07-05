@@ -117,7 +117,6 @@ AFRAME.registerComponent('game', {
         var scene = document.getElementById("scene");
         var ambientlight = document.getElementById("ambientlight");
         var roomlamp = document.getElementById("roomlamp");
-        var sun = document.getElementById("sun");
         var next = document.getElementById('continue');
         var grannygreet1 = document.getElementById("grannygreet1");
         var grannygreet2 = document.getElementById("grannygreet2");
@@ -148,7 +147,6 @@ AFRAME.registerComponent('game', {
         //handy.setAttribute('visible', true);
         roomlamp.setAttribute('light','intensity', 0.7);
         ambientlight.setAttribute('light','intensity', 0.3);
-        sun.setAttribute('light','intensity', 0.5);
         headline.setAttribute("visible", false);
         end.setAttribute("visible", false);
         choose.setAttribute("visible", false);
@@ -281,7 +279,6 @@ AFRAME.registerComponent('game', {
         var choose = document.getElementById("bye");
         var ambientlight = document.getElementById("ambientlight");
         var roomlamp = document.getElementById("roomlamp");
-        var sun = document.getElementById("sun");
         var outrosound = document.getElementById("outrosound");
         var next = document.getElementById('continue');
         var message = document.getElementById("elixir");
@@ -296,7 +293,6 @@ AFRAME.registerComponent('game', {
         outrosound.components.sound.playSound();
         roomlamp.setAttribute('light','intensity', 0);
         ambientlight.setAttribute('light','intensity', 0);
-        sun.setAttribute('light','intensity', 0);
         this.data.state = "outro";
         end.setAttribute("visible", true);
         this.data.startTime = Date.now();
