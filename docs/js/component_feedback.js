@@ -8,6 +8,12 @@ AFRAME.registerComponent('feedback', {
 
     },
     update: function () {
+        if(this.data.value < 0){
+            this.data.value = 0;
+        }
+        else if(this.data.value > 100){
+            this.data.value = 100;
+        }
         var roundValue = Math.round(this.data.value/10)*10;
         var roundValueTwenty = Math.round(this.data.value/20)*20;
         console.log("zwanziger: "+roundValueTwenty);
@@ -18,12 +24,6 @@ AFRAME.registerComponent('feedback', {
 
         greyElement.classList.add('grey'+roundValue);
 
-        if(this.data.value < 0){
-            this.data.value = 0;
-        }
-        else if(this.data.value > 100){
-            this.data.value = 100;
-        }
         var data= this.data;
         var el= this.el;
         var heart = document.getElementById('heart');
