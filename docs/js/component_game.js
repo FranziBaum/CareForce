@@ -154,8 +154,9 @@ AFRAME.registerComponent('game', {
         message.setAttribute("visible", false);
         next.setAttribute("visible", false);
 
+        var randomGreet = grannygreets[Math.floor(Math.random()*grannygreets.length)];
 
-            random(grannygreets).components.sound.playSound();
+            randomGreet.components.sound.playSound();
 
     
     },
