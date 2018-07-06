@@ -10,7 +10,7 @@ AFRAME.registerComponent('game', {
         day: { type: 'int', default: 1 }
     },
     init: function () { 
-        this.startDay();
+        this.standby();
     },
     update: function () {
 
