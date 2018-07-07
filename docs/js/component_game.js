@@ -175,6 +175,11 @@ AFRAME.registerComponent('game', {
         var endday1h_sound = document.getElementById("endday1h");
         var endday2h_sound = document.getElementById("endday2h");
         var endday4h_sound = document.getElementById("endday4h");
+        var glasses = document.getElementById("glasses");
+        var window = document.getElementById("window");
+
+        glasses.setAttribute("position", "-3, -0.85, 1");
+        window.setAttribute("rotation", "0 0 0");
 
 
         if(this.data.caretime == 1){
@@ -248,6 +253,7 @@ AFRAME.registerComponent('game', {
         var scene = document.getElementById("scene");
         var message = document.getElementById("elixir");
         var camerawrapper = document.getElementById("cameraWrapper");
+        var backgroundanimation = document.getElementById("backgroundanimation");
 
 
         headline.setAttribute("visible", false);
@@ -257,7 +263,7 @@ AFRAME.registerComponent('game', {
         for (var i = 0; i < buttons.length; i++) {
             buttons.item(i).setAttribute("visible", false);
         }
-
+        backgroundanimation.emit("animatebackground");
         kameraanimation.emit("animate");
         ambientlight.emit('animate');
         sunsphere.emit("animate");
