@@ -102,6 +102,7 @@ AFRAME.registerComponent('game', {
     },
 
     startDay: function () {
+        console.log("start Day");
         var yesterday = this.data.day;
         this.data.state = "play";
         this.data.day = yesterday+1;
