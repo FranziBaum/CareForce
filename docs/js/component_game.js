@@ -2,7 +2,7 @@ AFRAME.registerComponent('game', {
     schema: { 
         startTime: { type: 'int', default: 0 },
         currentTime: { type: 'int', default: 0 },
-        firstChallengeTime: { type: 'int', default: 25000},
+        firstChallengeTime: { type: 'int', default: 15000},
         caretime: { type: 'int', default: 1 },
         state: { type: 'string', default: 'start' },
         challenges: { type: 'array' },
@@ -123,11 +123,15 @@ AFRAME.registerComponent('game', {
         var grannygreet2 = document.getElementById("grannygreet2");
         var grannygreet3 = document.getElementById("grannygreet3");
         var grannygreets = [grannygreet1, grannygreet2, grannygreet3];
+        var logo = document.getElementById("logo");
+
 
 
         var start = document.getElementById("start");
         var blurElement = document.getElementById("blurwrap");
         start.setAttribute("visible", false);
+        logo.setAttribute("visible", false);
+
 
 
         this.data.startTime = Date.now();
